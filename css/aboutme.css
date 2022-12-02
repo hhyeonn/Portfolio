@@ -1,0 +1,77 @@
+/* about.css */
+
+.about-inner{display: flex; flex-direction: column;}
+/* title */
+.about-inner h1{position: absolute; top: 380px; left: 350px; line-height: 1.1;}
+.about-inner h1 span{display: block;}
+.about-inner h1 span.tit_text{position: relative; overflow: hidden;}
+.about-inner h1 span.tit_text:nth-of-type(2) span,
+.about-inner h1 span.tit_text:nth-of-type(3) span{position: relative; top: -130px;}
+.about-inner h1 span.tit_text:nth-of-type(2) span{ animation:aboutTitleShow 0.4s linear 0.4s both; -webkit-animation:aboutTitleShow 0.4s linear 0.4s both; }
+.about-inner h1 span.tit_text:nth-of-type(3) span{ animation:aboutTitleShow 0.4s linear 0.8s both; -webkit-animation:aboutTitleShow 0.4s linear 0.8s both; }
+@keyframes aboutTitleShow {
+	0%{top: -130px;}
+	100%{top: 0px;}
+}
+.about-inner h1 span.change{position: relative; display: inline-block;}
+.about-inner h1 span.change::after{position: absolute; left: 0; bottom: 0.5vw; content: ""; width: 100%; height: 0.4vw; background: #fff;}
+.about-inner h1.active span.tit_text span{top: 0;}
+
+/* title 호버시 */
+.about-inner h1 span.change:hover{color: transparent; -webkit-text-stroke: 1px #fff;}
+.about-inner h1 span.change:hover+.js-move{opacity: 1; display: block;}
+.about-inner h1 span.change:hover+.change+.js-move{opacity: 1; display: block;}
+.about-inner h1 span.change:hover::after{display: none;}
+@keyframes js-wave{
+	0%, 100% {
+		clip-path: polygon(0% 47%, 10% 48%, 33% 54%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
+	}
+	50% {
+		clip-path: polygon(0% 60%, 15% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
+	}
+}
+.about-inner h1 .js-move{opacity: 0; display: block; z-index: -1; position: absolute; display: inline-flex; flex-direction: column; right: -150px; bottom: -50px; width: 350px; height: 450px;pointer-events: none;}
+.about-inner h1 .js-move .txt{position: relative; top: 0; left: 0px; transform: translateX(1.35vw) translateY(0.9vw); font-family: 'Noto Sans KR', sans-serif; text-transform: uppercase; font-weight: 900; font-size:  calc(var(--font-size--h1) * 0.6); color: #000; text-shadow: -1px -1px 0 #EFD81D, 1px -1px 0 #EFD81D, -1px 1px 0 #EFD81D, 1px 1px 0 #EFD81D;}
+.about-inner h1 .js-move .txt::after{position: absolute; content: attr(data-text); top: 0; left: 0; color: #EFD81D; animation: js-wave 3s ease-in-out infinite;}
+.about-inner h1 .js-move .icon-js{width: 100%; height: 100%; font-size: calc(var(--font-size--h1) * 3.5); color: #EFD81D; transition: 0.4s;}
+
+/* introduce */
+.about-inner .introduce{margin-top: 850px;}
+.about-inner .introduce h2{text-align: left; padding-top: 30px; padding-bottom: 70px; font-size: calc(var(--font-size--h1) * 0.3); font-weight: 500;}
+.about-inner .introduce .introduce-inner{position: relative; width: 1200px;}
+.about-inner .introduce .introduce-inner::after{display: block; content: "";clear: both;}
+/* introduce-profile */
+.about-inner .introduce .introduce-inner .profile{position: relative; float: left;}
+.about-inner .introduce .introduce-inner .profile .profile-img{width: 321px; height: 420px; background: url(../images/profile1.jpg) no-repeat 50% 50%; background-size: 100%; transition: 300ms linear;}
+.about-inner .introduce .introduce-inner .profile .profile-img:hover{background-size: 110%;}
+/* introduce-discription */
+.about-inner .introduce .introduce-inner .discription{position: relative; top: 0px; float: left; padding-left: 80px; padding-bottom: 20px; width: 600px;}
+.about-inner .introduce .introduce-inner .discription dl{padding-bottom: 25px;}
+.about-inner .introduce .introduce-inner .discription dl dt{padding-bottom: 5px; font-size: calc(var(--font-size--text) * 1.5); font-weight: var(--font-weght-bold);}
+.about-inner .introduce .introduce-inner .discription dl dd{ font-size: var(--font-size--text);}
+.about-inner .introduce .introduce-inner .discription dl dd>ul{padding-left: 20px; padding-bottom: 10px; list-style: disc;}
+.about-inner .introduce .introduce-inner .discription dl.channel dd{display: inline-block; margin-right: 5px; background: rgba(255, 255, 255, 0.4);}
+.about-inner .introduce .introduce-inner .discription dl.channel dd:hover{background-color: #fff;}
+.about-inner .introduce .introduce-inner .discription dl.channel dd a{display: block; padding: 5px 10px; color: #000;}
+/* scroll-circle */
+.about-inner .scroll{opacity: 1; position: fixed; right: 100px; bottom: 50px; width: 100px; height: 100px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.4);transition: 0.3s;}
+@keyframes scroll{
+    0%{transform: translateY(-25px);}
+    40%,60%{transform: translateY(0px);}
+    100%{transform: translateY(25px);}
+}
+.about-inner .scroll span{position: absolute; left: 50%; top: 50%; transform: translateX(-50%) translateY(-50%); display: block; width: 100px; height: 25px; overflow: hidden;}
+.about-inner .scroll span::after{opacity: 0.4;position: absolute;margin-left: 25px; display: inline-block; content: "scroll";font-size: 20px;animation: scroll 2.5s linear infinite;}
+
+.about-inner .introduce .introduce-inner .scroll::before{position: absolute; content: "Projects♡"; width: 100%; height: 100%; color: #000;text-align: center;line-height: 100px; background-color: #fff; border-radius: 50%; transform: scale(0); transition: 0.3s;}
+.about-inner .introduce .introduce-inner .scroll:hover::before{display: block; transform: scale(1);}
+.about-inner .introduce .introduce-inner .scroll:hover span::after{opacity: 0;}
+
+#about.active .about-inner .scroll{ opacity: 0; transform: scale(0);}
+
+@media screen and (max-width: 1530px) {
+	.about-inner h1 .js-move{left: -160px; right: auto; bottom: -130px;}
+	.about-inner h1 .js-move .txt{ font-size:  calc(var(--font-size--h1) * 0.5);}
+	.about-inner h1 .js-move .icon-js{font-size: calc(var(--font-size--h1) * 3);}
+	.about-inner .scroll{left: 100px; width: 85px; height: 85px;}
+}

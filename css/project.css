@@ -1,0 +1,98 @@
+/* projects.css */
+/* 공통-pc */
+.projects-inner h1{ position: relative; left: -100px; top: 0px; padding-bottom: 50px; transition: 0.5s; -webkit-transition: 0.5s; -moz-transition: 0.5s; -ms-transition: 0.5s; -o-transition: 0.5s; }
+.projects-inner h1::after{position: absolute; left: 0; bottom: 0; content: ""; width: 0%; height: 1px;background: #fff;}
+.projects-inner .pc{position: relative; display: flex;flex-direction: column;  max-width: 1500px;}
+.projects-inner .pc>div{position: relative; width: 1300px; padding: 70px 0px;}
+.projects-inner .pc>div .project-img{position: sticky; top: calc(70vh - 180px); display: inline-block; margin-top: 0px;}
+.projects-inner .pc>div .project-img figure.device::after{z-index: -10; position: absolute; display: block; background: #151515; content: ""; left: 0; top: 380px;  width: 100%; height: 150px;}
+.projects-inner .pc>div .project-img figure.device img{position: relative; width: 600px;}
+.projects-inner .pc>div .project-img figure.product{position: absolute; left: 22px; top: 20px; width: 550px; height: 360px; overflow: hidden;}
+.projects-inner .pc>div .project-img figure.product img{position: absolute; left: 0px; top: 0px; z-index: -1; display: block; width: 550px;}
+.projects-inner .pc>div .description{max-width: 600px; margin-top: 250px;}
+.projects-inner .pc>div .description h2{position: relative; padding-bottom: 30px; font-size: var(--font-size--large);font-weight: var(--font-weght-semibold);}
+.projects-inner .pc>div .description h2 .sub_title{font-size: var(--font-size--small); color: #fff; opacity: 0.5; font-weight: 300;}
+.projects-inner .pc>div .description dl{position: relative;left: 0px; display: flex;padding: 30px 0; border-bottom: 1px solid #fff;}
+.projects-inner .pc>div .description dl:not(.text){word-break: keep-all;}
+.projects-inner .pc>div .description dl dt{width: 130px; font-weight: var(--font-weght-bold);}
+.projects-inner .pc>div .description dl dd{flex: 1;}
+.projects-inner .pc>div .description dl dd>ul>li{margin-left: 10px; list-style:disc; line-height: 1.7;}
+.projects-inner .pc>div .description dl dd>ul>li>ul>li{margin-left: 20px;list-style:disc}
+/* site */
+.projects-inner .pc>div .description .site{border-bottom: none; padding-top: 10px;}
+.projects-inner .pc>div .description .site dd ul{display: flex; list-style: none;}
+.projects-inner .pc>div .description .site dd ul li{flex: 1; margin-left: 0; text-align: center; border: 1px solid #fff; list-style: none;}
+.projects-inner .pc>div .description .site dd ul li:hover a{background-color: #fff; color: #000;}
+.projects-inner .pc>div .description .site dd ul li a{display: block; padding: 10px 0; width: 100%; height: 100%;}
+/* 프로젝트 타이틀이 뷰포트 안에 들어오면 애니메이션 시작 */
+.projects-inner h1.active{left: 0;}
+.projects-inner h1.active::after{ width: 100%; transition:1s 0.5s; -webkit-transition:1s 0.5s; -moz-transition:1s 0.5s; -ms-transition:1s 0.5s; -o-transition:1s 0.5s; }
+
+/* pc-project1 */
+.projects-inner .pc .project-1{position: relative;}
+.projects-inner .pc .project-1 .num{position: absolute; right: 225px; bottom: 480px; font-size: var(--font-size--h1); font-weight: var(--font-weght-bold); font-family: var(--font-family--italic); color: #000; text-shadow: -1px 1px #fff, -1px -1px #fff, 1px -1px #fff, 1px 1px #fff; opacity: 0.7;}
+.projects-inner .pc .project-1 .project-img{float: right; margin-left: -50px;}
+.projects-inner .pc .project-1 .project-img .product img{ position: absolute; left: 0px; top: 0px; z-index: -1; display: block; width: 550px; animation: project1_scroll 5s cubic-bezier(.65,.27,.79,1.06) infinite alternate paused; -webkit-animation: project1_scroll 5s cubic-bezier(.65,.27,.79,1.06) infinite alternate paused;}
+@keyframes project1_scroll{
+    0%,10%{top: 5px;}
+    90%,100%{top: -1050px;}
+}
+.projects-inner .project .project-1 .description{float: left; margin-right: 50px;}
+/* 스크롤이 도착하면 애니메이션 활성화 */
+.projects-inner .pc .project-1 .project-img.active .product img{animation-play-state: running;}
+
+/* pc-project2*/
+.projects-inner .pc .project-2 .num{position: absolute; left: 225px; bottom: 480px; font-size: var(--font-size--h1); font-weight: var(--font-weght-bold); font-family: var(--font-family--italic); color: #000; text-shadow: -1px 1px #fff, -1px -1px #fff, 1px -1px #fff, 1px 1px #fff; opacity: 0.7;}
+.projects-inner .pc .project-2 .project-img{float: left;}
+.projects-inner .pc .project-2 .project-img .product img{position: absolute; left: 0px; top: 0px; z-index: -1; display: block; width: 550px; animation: project2_scroll 5s cubic-bezier(.65,.27,.79,1.06) infinite alternate paused; -webkit-animation: project2_scroll 5s cubic-bezier(.65,.27,.79,1.06) infinite alternate paused;}
+@keyframes project2_scroll{
+    0%,10%{top: 5px;}
+    90%,100%{top: -785px;}
+}
+.projects-inner .pc .project-2 .description{float: right;}
+.projects-inner .pc .project-2 .project-img.active .product img{animation-play-state: running;}
+
+/* pc-project3 */
+.projects-inner .pc .project-3 .num{position: absolute; right: 225px; bottom: 480px; font-size: var(--font-size--h1); font-weight: var(--font-weght-bold); font-family: var(--font-family--italic); color: #000; text-shadow: -1px 1px #fff, -1px -1px #fff, 1px -1px #fff, 1px 1px #fff; opacity: 0.7;}
+.projects-inner .pc .project-3 .project-img{float: right;}
+.projects-inner .pc .project-3 .project-img .product img{ position: absolute; left: 0px; top: 0px; z-index: -1; display: block; width: 550px; animation: project3_scroll 5s cubic-bezier(.65,.27,.79,1.06) infinite alternate paused; -webkit-animation: project3_scroll 5s cubic-bezier(.65,.27,.79,1.06) infinite alternate paused; }
+@keyframes project3_scroll{
+    0%,10%{top: 5px;}
+    90%,100%{top: -1418px;}
+}
+.projects-inner .pc .project-3 .description{float: left;}
+.projects-inner .pc .project-3 .project-img.active .product img{animation-play-state: running;}
+
+/* 공통-mobile */
+.projects-inner .mobile>div{position: relative; display: flex; padding-top: 200px; width: 1300px; /*overflow: hidden;*/}
+.projects-inner .mobile>div .project-img{position: relative; display: inline-flex;}
+.projects-inner .mobile>div .project-img .device{position: relative; top: 50%; transform: translateY(-50%); width: 250px;}
+.projects-inner .mobile>div .project-img .product{z-index: -1; position: absolute;left: 17px; top: 50%; transform: translateY(-50%); width: 205px; border-radius: 10px;}
+.projects-inner .mobile>div .description{max-width: 600px;}
+.projects-inner .mobile>div .description h2{position: relative; padding-bottom: 30px; font-size: var(--font-size--large);font-weight: var(--font-weght-semibold);}
+.projects-inner .mobile>div .description h2 .sub_title{font-size: var(--font-size--small); color: #fff; opacity: 0.5; font-weight: 300;}
+.projects-inner .mobile>div .description dl{position: relative;left: 0px; display: flex;padding: 30px 0; border-bottom: 1px solid #fff;}
+.projects-inner .mobile>div .description dl:not(.text){word-break: keep-all;}
+.projects-inner .mobile>div .description dl dt{width: 130px; font-weight: var(--font-weght-bold);}
+.projects-inner .mobile>div .description dl dd{flex: 1;}
+.projects-inner .mobile>div .description dl dd>ul>li{margin-left: 10px; list-style:disc; line-height: 1.7;}
+.projects-inner .mobile>div .description dl dd>ul>li>ul>li{margin-left: 20px;list-style:disc}
+/* site */
+.projects-inner .mobile>div .description .site{border-bottom: none; padding-top: 10px;}
+.projects-inner .mobile>div .description .site dd ul{display: flex; list-style: none;}
+.projects-inner .mobile>div .description .site dd ul li{flex: 1; margin-left: 0; text-align: center; box-sizing: border-box; border: 1px solid #fff; list-style: none; opacity: 1;}
+.projects-inner .mobile>div .description .site dd ul li:hover a{background-color: #fff; color: #000;}
+.projects-inner .mobile>div .description .site dd ul li a{display: block; padding: 10px 0; width: 100%; height: 100%;}
+
+/* mobile-project4 */
+.projects-inner .mobile .project-4 .num{z-index: -1; display: inline-block; position: absolute; left: 80px; top: 50%; bottom: 480px; width: 160px; height: 160px; font-size: var(--font-size--h1); font-weight: var(--font-weght-bold); font-family: var(--font-family--italic); color: #000; text-shadow: -1px 1px #fff, -1px -1px #fff, 1px -1px #fff, 1px 1px #fff; opacity: 0.7;}
+.projects-inner .mobile .project-4 .project-img{flex: 1; order: 1; display: flex; justify-content: flex-start;}
+.projects-inner .mobile .project-4 .project-img figure{position: relative; margin-left: 300px;}
+.projects-inner .mobile .project-4 .description{flex: 1; order: 2; margin-left: 90px;}
+
+/* mobile-project5 */
+.projects-inner .mobile .project-5 .num{z-index: -1; position: absolute; right: 80px; top: 50%; bottom: 480px; font-size: var(--font-size--h1); font-weight: var(--font-weght-bold); font-family: var(--font-family--italic); color: #000; text-shadow: -1px 1px #fff, -1px -1px #fff, 1px -1px #fff, 1px 1px #fff; opacity: 0.7;}
+.projects-inner .mobile .project-5 .project-img{flex: 1; order: 2; display: flex; justify-content: flex-end;}
+.projects-inner .mobile .project-5 .project-img figure{ position: relative; margin-right: 300px;}
+.projects-inner .mobile .project-5 .project-img figure .product{height: 445px;}
+.projects-inner .mobile .project-5 .description{flex: 1; order: 1; margin-right: 90px;}

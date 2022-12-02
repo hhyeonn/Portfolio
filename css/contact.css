@@ -1,0 +1,9 @@
+/* contact.css */
+.contact-inner h1{position: relative; margin-left: 350px; padding-bottom: 50px;}
+.contact-inner h1::after{position: absolute; left: 0; bottom: 0; content: ""; width: 100%; height: 1px; background-color: #fff;}
+.contact-inner div.call{display: flex; margin-left: 350px; padding: 100px 0; width: 1200px;}
+.contact-inner div.call dl{flex: 1;}
+.contact-inner div.call dl dt{padding-bottom: 5px; font-size: calc(var(--font-size--text) * 1.5); font-weight: var(--font-weght-bold);}
+.contact-inner div.call dl dd{line-height: 1.5; font-size: var(--font-size--text); transition: 1s;}
+.contact-inner div.call dl.channel dd a{border-bottom: 1px solid #fff;}
+.contact-inner div.call dl.channel dd a:hover{padding: 5px; color: #000; border-bottom: none; background-color: #fff;}
