@@ -1,6 +1,6 @@
 @import url(reset.css);
-@import url(about.css);
-@import url(projects.css);
+@import url(aboutme.css);
+@import url(project.css);
 @import url(contact.css);
 
 /* Noto Sans Korean Regular 400 */
@@ -11,7 +11,6 @@
 font-family: 'Averia Serif Libre', cursive;
 font-family: 'Noto Sans KR', sans-serif; 
 */
-
 
 /* custom variables */
 :root{
@@ -31,10 +30,11 @@ font-family: 'Noto Sans KR', sans-serif;
 *{box-sizing: border-box; margin: 0; padding: 0;}
 body{
     overflow-x: hidden;
-    font-family: var(--font-family--normal);
     background: #4f4f4f;color: #fff;
     word-break: break-all;
-    font-size: var(--font-size--text); cursor:default;
+    font-family: var(--font-family--normal);
+    font-size: var(--font-size--text);
+    cursor:default;
 }
 a{color: #fff; text-decoration: none;}
 
@@ -43,26 +43,31 @@ body::-webkit-scrollbar{width: 15px}
 body::-webkit-scrollbar-thumb{height: 30%;background-color: rgba(255, 255, 255, 0.1);}
 
 /* layout */
-#loading-page{width: 100%; height: 100vh;}
 #wrap{width: 100%; height: 100%;}
     #header{z-index: 100; position: fixed; width: 100%;}
-    #header .header-inner{
-        position: relative;
-        top: 0;height: 100px;
-        padding-top: 35px;justify-content: flex-end;padding-right: 80px;
-        background: #151515;}
-
+        #header .header-inner{
+            position: relative;
+            top: 0;height: 100px;
+            padding-top: 35px;justify-content: flex-end;padding-right: 80px;
+            background: #4f4f4f;
+        }
     #main{width: 100%;}
-    /* #main #about{position: relative; width: 100%;padding-top: 300px;} */
-    #main #about{width: 1200px;margin: 0 auto;padding-top: 300px;}
-    #main #about .about-inner{position: relative;width: 1200px;margin: 0 auto;padding-bottom: 100px;}
-    #main #projects{transform: translateY(0px); padding-top: 150px; width: 100%;}
-    #main #projects .projects-inner{padding-left: 150px; display: inline-block;}
-    #main #contact{position: relative; width: 100%;}
-    #main #contact .contact-inner{padding-top: 200px;}
+    #about{
+        width: 100%;margin: 0 auto;
+        padding-top: 350px;padding-bottom: 300px;
+        display: flex;justify-content: center;align-items: center;
+    }
+        #about .about-inner{position: relative;width: 1200px;margin: 0 auto;}
+    #about-me{width: 100%;margin: 0 auto;padding-top: 100px;padding-bottom: 100px;}
+        #about-me .introduce{position: relative;width: 1200px;margin: 0 auto;}
+    #projects{transform: translateY(0px);padding-top: 150px;width: 100%;margin: 0 auto;}
+        #projects .projects-inner{position: relative;margin: 0 auto;}
+    #contact{/* width: 1200px; */width: calc(100% - 200px); margin: 0 auto;}
+        #contact .contact-inner{padding-top: 100px;}
 
 /* header */
 #header{opacity: 1; transition: 0.5s; overflow: hidden;}
+#header.fade{opacity: 0; transform: translateY(-30px);}
 .header-inner{display: flex;flex-direction: row;flex-wrap: wrap;}
 .header-inner>h1{
     position: absolute;
@@ -74,25 +79,76 @@ body::-webkit-scrollbar-thumb{height: 30%;background-color: rgba(255, 255, 255, 
 .header-inner>nav>ul{display: flex;justify-content: space-between;padding-top: 8px;}
 .header-inner>.header-nav>ul>li>a{font-family: 'Averia Serif Libre', cursive;}
 
-#header.fade{opacity: 0; transform: translateY(-30px);}
-
+/* main circle effect */
+@keyframes rotation1 {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
+@keyframes rotation2 {
+    0% {
+      transform: rotate(60deg);
+    }
+    100% {
+      transform: rotate(420deg);
+    }
+}
+@keyframes rotation3 {
+    0% {
+      transform: rotate(120deg);
+    }
+    100% {
+      transform: rotate(480deg);
+    }
+}
 
 /* main */
-#main h1{
-    text-align: center;
-    font-size: 100px;
-    font-family: 'Averia Serif Libre', cursive;
+#main #about h1{text-align: center;font-family: 'Averia Serif Libre', cursive;}
+#main .about-inner h1{font-size: 100px;}
+
+#about .about-inner .cercleRotateContainer {
+    position: absolute;
+    width: 70%;height: 290%;
+    top: -200px;left: 180px;
+}
+#about .about-inner .cercleRotateContainer .cercle {
+    margin: auto;
+    width: 94%;
+    height: 94%;
+    border: 1px solid #FFF500;
+    background-color: #FFF500;
+    border-radius: 50%;
+    opacity: 30%;
+}
+  
+.cercleRotateContainer:nth-child(2) {
+    animation: rotation1 8s linear infinite;
+}
+  
+.cercleRotateContainer:nth-child(3) {
+    animation: rotation2 8s linear infinite;
+}
+  
+.cercleRotateContainer:nth-child(4) {
+    animation: rotation3 10s linear infinite;
 }
 
-
-@keyframes footerSlide-left {
-    from{left: 0;}
-    to{left: -1500px;}
-}
-@keyframes footerSlide-right {
-    from{left: -2700px;}
-    to{left: 0px;}
-}
+/* cursor */
+/* .cursor {
+    display: none;
+    position: fixed;
+    background: #fff500;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border-radius: 50%;
+    will-change: transform;
+    pointer-events: none;
+    z-index: 10000;
+} */
 
 
 @media screen and (max-width: 1400px) {
