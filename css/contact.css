@@ -6,9 +6,9 @@
 }
 .contact-inner h3{
     text-align: center;
-	padding-bottom: 120px;
-	font-size: 100px;
-	font-family: 'Averia Serif Libre', cursive;
+    padding-bottom: 120px;
+    font-size: 100px;
+    font-family: 'Averia Serif Libre', cursive;
 }
 .contact-inner div.call{display: flex;padding: 100px 0;}
 .contact-inner div.call dl{flex: 1;}
