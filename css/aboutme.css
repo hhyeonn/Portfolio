@@ -1,71 +1,234 @@
-/* about.css */
-.about-inner{display: flex; flex-direction: column;}
+window.onload = () => {
 
-/* title */
-/* .about-inner h1{position: absolute; top: 380px; left: 350px; line-height: 1.1;} */
+  // scroll이 about bottom에 위치할 경우 project 위로 올라오기
+  const header = document.querySelector('#header');
+  const sectionAbout = document.querySelector('#about');
+  const sectionProject = document.querySelector('#projects');
 
-/* #about-me>.introduce */
-.introduce h2{
-	text-align: left;
-	padding-bottom: 70px;
-	font-size: 80px;
-	font-family: 'Averia Serif Libre', cursive;
-}
-.introduce .introduce-inner{position: relative; width: 1200px;margin: 0 auto;}
-.introduce .introduce-inner::after{display: block; content: "";clear: both;}
+  const aboutHeading = document.querySelector('.about-inner h1');
+  const introduce = document.querySelector('.introduce');
+  
+  let aboutH;
+  let sectionAboutH;
+  let scrollY;
+  let aboutTop;
+  let aboutBottom;
+  let aboutBottomScroll;
+  let projectTop;
+  let projectMove;
+  let aboutHeadingTopScroll;
+  let weelDeltaY;
+  const aboutMoveDistance = 400;
 
-/* introduce-profile */
-.introduce-inner .profile{position: relative; float: left;}
-.introduce-inner .profile .profile-img{
-	width: 464px;height: 479px;
-	border-radius: 50%;
-	background: url(../images/hyehyeon.JPG) no-repeat 25% 25%;
-	background-size: 100%;
-	transition: 500ms linear;
-}
-.introduce-inner .profile .profile-img:hover{background-size: 105%;}
+  
+  
+  function setProperty() {
+      windowH = window.innerHeight;
+      sectionAboutScrollTop = sectionAbout.offsetHeight - windowH;
+      scrollY = window.scrollY;
+      aboutH = sectionAbout.getBoundingClientRect().height;
+      aboutTop = scrollY + sectionAbout.getBoundingClientRect().top;
+      aboutBottom = aboutTop + sectionAbout.offsetHeight;
+      aboutBottomScroll = aboutBottom - window.innerHeight;
+      projectTop = scrollY + sectionProject.getBoundingClientRect().top;
+      projectTopScroll = projectTop - window.innerHeight;
+      projectMove = scrollY - projectTopScroll;
+      aboutHeadingTopScroll = scrollY + aboutHeading.getBoundingClientRect().top;
+      
+      const parallaxStartValue = 0;
+      const parallaxSpeed = 200;
+      const aboutParallaxBody = window.innerHeight;
 
-/* introduce-discription */
-.introduce-inner .discription{
-	position: relative;
-	top: 0px;width: 600px;
-	float: right;
-	padding-left: 80px;
-}
-.introduce-inner .discription dl{padding-bottom: 25px;}
-.introduce-inner .discription dl dt{
-	padding-bottom: 10px;
-	font-size: 30px;
-	font-weight: var(--font-weght-bold);
-}
-.introduce-inner .discription dl dd{font-size: 20px;padding-left: 20px;display: inline-block;}
-.introduce-inner .discription dl dd img {width: 45px;}
-.introduce-inner .discription dl dd>ul{padding-bottom: 10px; list-style: none;}
+      parallaxThisTop = scrollY - parallaxSpeed * 100
+  }
 
 
-/* .introduce-inner .discription dl.channel dd{display: inline-block; margin-right: 5px; background: rgba(255, 255, 255, 0.4);}
-.introduce-inner .discription dl.channel dd:hover{background-color: #fff;}
-.introduce-inner .discription dl.channel dd a{display: block; padding: 5px 10px; color: #000;} */
 
-/* scroll-circle */
-.about-inner .scroll{opacity: 1; position: fixed; right: 100px; bottom: 50px; width: 100px; height: 100px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.4);transition: 0.3s;}
-@keyframes scroll{
-    0%{transform: translateY(-25px);}
-    40%,60%{transform: translateY(0px);}
-    100%{transform: translateY(25px);}
-}
-.about-inner .scroll span{position: absolute; left: 50%; top: 50%; transform: translateX(-50%) translateY(-50%); display: block; width: 100px; height: 25px; overflow: hidden;}
-.about-inner .scroll span::after{opacity: 0.4;position: absolute;margin-left: 25px; display: inline-block; content: "scroll";font-size: 20px;animation: scroll 2.5s linear infinite;}
+/* ------------------------------------------------------------------*/
+// header
+  
+  // 스크롤을 내리면 header가 위로 사라짐 
+  function headerFadeOut() {
+    setProperty();
+    window.addEventListener('wheel', (e) => {
+        if(scrollY > 0 && e.deltaY > 0) {  // 내려갈때
+            header.classList.add('fade');
+        } else {  // 올라갈때
+            header.classList.remove('fade');
+        }
+    });
+    }
 
-.about-inner .introduce .introduce-inner .scroll::before{position: absolute; content: "Projects♡"; width: 100%; height: 100%; color: #000;text-align: center;line-height: 100px; background-color: #fff; border-radius: 50%; transform: scale(0); transition: 0.3s;}
-.about-inner .introduce .introduce-inner .scroll:hover::before{display: block; transform: scale(1);}
-.about-inner .introduce .introduce-inner .scroll:hover span::after{opacity: 0;}
+/* ------------------------------------------------------------------*/
+// about
 
-#about.active .about-inner .scroll{ opacity: 0; transform: scale(0);}
+  const aboutTitle = document.querySelector('#about h1');
+  const jsMove = document.querySelector('.js-move');
+  function aboutTitleShow() {
+      aboutTitle.classList.add('active');
+  }
 
-@media screen and (max-width: 1530px) {
-	.about-inner h1 .js-move{left: -160px; right: auto; bottom: -130px;}
-	.about-inner h1 .js-move .txt{ font-size:  calc(var(--font-size--h1) * 0.5);}
-	.about-inner h1 .js-move .icon-js{font-size: calc(var(--font-size--h1) * 3);}
-	.about-inner .scroll{left: 100px; width: 85px; height: 85px;}
-}
+
+  // 스크롤을 내리면 h1의 위치가 위로 서서히 올라감
+  function aboutHeadingMoveUp() {
+      setProperty();
+      aboutHeading.style.transform = `translateY(${-scrollY * 0.15}px)`;
+  }
+
+  // about 섹션을 벗어나면 scroll-circle이 사라짐
+  function scrollCircleFadeOut() {
+      setProperty();
+      if(scrollY > sectionAboutScrollTop) {
+          sectionAbout.classList.add('active');
+      } else {
+          sectionAbout.classList.remove('active');
+      }
+  };
+  
+  // JS Icon의 위치를 마우스의 좌표값으로 설정
+//   sectionAbout.addEventListener('mousemove', (event) => {
+//       const x = event.clientX;
+//       const y = event.clientY;
+//       jsMove.style.transform = `translateX(${-x / 5}px) translateY(${-y / 4}px)`;
+//   });
+
+
+
+
+/* ------------------------------------------------------------------*/
+// projects
+
+//   스크롤을 내릴때 프로젝트 전체 섹션이 위로 올라간다.
+//   function projectMoveUp() {
+//       setProperty();
+//       const parallaxStartValue = 300;
+//       const aboutScrollPercent = scrollY / aboutH;   
+//       const scrollDistance = Math.max(parallaxStartValue - parallaxStartValue, Math.min(parallaxStartValue, parallaxStartValue - (parallaxStartValue * aboutScrollPercent)));
+//       sectionProject.style.transform = `translateY(${scrollDistance}px)`;
+//   }
+
+
+  const productImg = document.querySelectorAll('.project-img');
+  const projectTitle = document.querySelector('#projects h1');
+
+  // 프로젝트 타이틀이 뷰포트 안에 들어오면 밑줄이 스르르 나타나기
+//   const projectObserverObtion = {threshold: 1};
+//   const projectObserverCallback = (entries, observer) => {
+//       entries.forEach(entry => {
+//           if (entry.isIntersecting) {
+//               entry.target.classList.add('active');
+//           } else {
+//               entry.target.classList.remove('active');
+//           }
+//       });
+//   };
+//   const projectObserver = new IntersectionObserver(projectObserverCallback, projectObserverObtion);
+//   projectObserver.observe(projectTitle);
+
+  // 태블릿, 모바일 목업이 뷰포트 안에 들어오면 디바이스 안의 스크린샷 이미지의 애니메이션 활성화
+  const observerObtion = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 1,
+  }
+  const observerCallback = (entries, observer) => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              entry.target.classList.add('active');
+          } else {
+              entry.target.classList.remove('active');
+          }
+      });
+  };
+  const observer = new IntersectionObserver(observerCallback, observerObtion);
+  productImg.forEach(item => {
+      observer.observe(item);
+  });
+
+  //mobile-project--디바이스가 옆에서 가운데로 스르르 나타나기
+  function project4SlideShow() {
+      setProperty();
+      
+      const project4 = document.querySelector('.project-4');
+      const project4Device = document.querySelector('.project-4 .project-img figure')
+      const project4Num = document.querySelector('.project-4 .num')
+      const slideStartValue = 5000;
+      const project4ScrollPercent = scrollY / (scrollY + project4.getBoundingClientRect().top);
+      const scrollDistance = Math.max(slideStartValue - slideStartValue, Math.min(slideStartValue, slideStartValue - (slideStartValue * project4ScrollPercent)));
+      
+      project4Device.style.transform = `translateX(${-scrollDistance}px)`
+      project4Num.style.transform = `translateX(${-scrollDistance * 0.3}px)`
+  }
+  function project5SlideShow() {
+      setProperty();
+      
+      const project5 = document.querySelector('.project-5');
+      const project5Device = document.querySelector('.project-5 .project-img figure')
+      const project5Num = document.querySelector('.project-5 .num')
+      const slideStartValue = 5000;
+      const project5ScrollPercent = scrollY / (scrollY + project5.getBoundingClientRect().top);
+      const scrollDistance = Math.max(slideStartValue - slideStartValue, Math.min(slideStartValue, slideStartValue - (slideStartValue * project5ScrollPercent)));
+      
+      project5Device.style.transform = `translateX(${scrollDistance}px)`
+      project5Num.style.transform = `translateX(${scrollDistance * 0.3}px)`
+  }
+
+
+
+/* ------------------------------------------------------------------*/
+
+  window.addEventListener('scroll', () => {
+      setProperty();
+      headerFadeOut();
+      aboutHeadingMoveUp();
+      scrollCircleFadeOut();
+    //   projectMoveUp();
+      project4SlideShow();
+      project5SlideShow();
+  });
+
+  window.addEventListener('resize', () => {
+      setProperty();
+  });
+
+
+  function init() {
+      aboutTitleShow();
+      setProperty();
+      headerFadeOut();
+      aboutHeadingMoveUp();
+      scrollCircleFadeOut();
+      // projectMoveUp();
+      project4SlideShow();
+      project5SlideShow();
+  };
+
+  init();
+
+}; //window.onload
+
+// contact
+let letters = document.getElementsByClassName('.title-letter');
+
+setTimeout(() => {
+  for (let i = 0; i < letters.length; i++) {
+    anime({
+      targets: letters[i],
+      easing: 'easeInQuad',
+      translateX: ['5px', '0'],
+      delay: 50 * i
+    });
+
+    anime({
+      targets: letters[i],
+      easing: 'easeInQuad',
+      opacity: 1,
+      delay: 60 * i,
+      complete: function(anim) {
+        if (i === letters.length - 1) {
+          showSubTitle()
+        }
+      }
+    });
+  }
+}, 500);
