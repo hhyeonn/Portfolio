@@ -49,15 +49,15 @@ window.onload = () => {
   
   // 스크롤을 내리면 header가 위로 사라짐 
   function headerFadeOut() {
-      setProperty();
-      window.addEventListener('wheel', (e) => {
-          if(scrollY > 0 && e.deltaY > 0) {  // 내려갈때
-              header.classList.add('fade');
-          } else {  // 올라갈때
-              header.classList.remove('fade');
-          }
-      });
-  }
+    setProperty();
+    window.addEventListener('wheel', (e) => {
+        if(scrollY > 0 && e.deltaY > 0) {  // 내려갈때
+            header.classList.add('fade');
+        } else {  // 올라갈때
+            header.classList.remove('fade');
+        }
+    });
+    }
 
 /* ------------------------------------------------------------------*/
 // about
@@ -86,11 +86,11 @@ window.onload = () => {
   };
   
   // JS Icon의 위치를 마우스의 좌표값으로 설정
-  sectionAbout.addEventListener('mousemove', (event) => {
-      const x = event.clientX;
-      const y = event.clientY;
-      jsMove.style.transform = `translateX(${-x / 5}px) translateY(${-y / 4}px)`;
-  });
+//   sectionAbout.addEventListener('mousemove', (event) => {
+//       const x = event.clientX;
+//       const y = event.clientY;
+//       jsMove.style.transform = `translateX(${-x / 5}px) translateY(${-y / 4}px)`;
+//   });
 
 
 
@@ -98,32 +98,32 @@ window.onload = () => {
 /* ------------------------------------------------------------------*/
 // projects
 
-  // 스크롤을 내릴때 프로젝트 전체 섹션이 위로 올라간다.
-  // function projectMoveUp() {
-  //     setProperty();
-  //     const parallaxStartValue = 300;
-  //     const aboutScrollPercent = scrollY / aboutH;   
-  //     const scrollDistance = Math.max(parallaxStartValue - parallaxStartValue, Math.min(parallaxStartValue, parallaxStartValue - (parallaxStartValue * aboutScrollPercent)));
-  //     sectionProject.style.transform = `translateY(${scrollDistance}px)`;
-  // }
+//   스크롤을 내릴때 프로젝트 전체 섹션이 위로 올라간다.
+//   function projectMoveUp() {
+//       setProperty();
+//       const parallaxStartValue = 300;
+//       const aboutScrollPercent = scrollY / aboutH;   
+//       const scrollDistance = Math.max(parallaxStartValue - parallaxStartValue, Math.min(parallaxStartValue, parallaxStartValue - (parallaxStartValue * aboutScrollPercent)));
+//       sectionProject.style.transform = `translateY(${scrollDistance}px)`;
+//   }
 
 
   const productImg = document.querySelectorAll('.project-img');
   const projectTitle = document.querySelector('#projects h1');
 
   // 프로젝트 타이틀이 뷰포트 안에 들어오면 밑줄이 스르르 나타나기
-  const projectObserverObtion = {threshold: 1};
-  const projectObserverCallback = (entries, observer) => {
-      entries.forEach(entry => {
-          if (entry.isIntersecting) {
-              entry.target.classList.add('active');
-          } else {
-              entry.target.classList.remove('active');
-          }
-      });
-  };
-  const projectObserver = new IntersectionObserver(projectObserverCallback, projectObserverObtion);
-  projectObserver.observe(projectTitle)
+//   const projectObserverObtion = {threshold: 1};
+//   const projectObserverCallback = (entries, observer) => {
+//       entries.forEach(entry => {
+//           if (entry.isIntersecting) {
+//               entry.target.classList.add('active');
+//           } else {
+//               entry.target.classList.remove('active');
+//           }
+//       });
+//   };
+//   const projectObserver = new IntersectionObserver(projectObserverCallback, projectObserverObtion);
+//   projectObserver.observe(projectTitle);
 
   // 태블릿, 모바일 목업이 뷰포트 안에 들어오면 디바이스 안의 스크린샷 이미지의 애니메이션 활성화
   const observerObtion = {
@@ -156,8 +156,8 @@ window.onload = () => {
       const project4ScrollPercent = scrollY / (scrollY + project4.getBoundingClientRect().top);
       const scrollDistance = Math.max(slideStartValue - slideStartValue, Math.min(slideStartValue, slideStartValue - (slideStartValue * project4ScrollPercent)));
       
-      project4Device.style.transform = `translateX(${-scrollDistance}px)`
-      project4Num.style.transform = `translateX(${-scrollDistance * 0.3}px)`
+      project4Device.style.transform = `translateX(${scrollDistance}px)`
+      project4Num.style.transform = `translateX(${scrollDistance * 0.3}px)`
   }
   function project5SlideShow() {
       setProperty();
@@ -182,7 +182,7 @@ window.onload = () => {
       headerFadeOut();
       aboutHeadingMoveUp();
       scrollCircleFadeOut();
-      // projectMoveUp();
+    //   projectMoveUp();
       project4SlideShow();
       project5SlideShow();
   });
@@ -206,3 +206,29 @@ window.onload = () => {
   init();
 
 }; //window.onload
+
+// contact
+let letters = document.getElementsByClassName('.title-letter');
+
+setTimeout(() => {
+  for (let i = 0; i < letters.length; i++) {
+    anime({
+      targets: letters[i],
+      easing: 'easeInQuad',
+      translateX: ['5px', '0'],
+      delay: 50 * i
+    });
+
+    anime({
+      targets: letters[i],
+      easing: 'easeInQuad',
+      opacity: 1,
+      delay: 60 * i,
+      complete: function(anim) {
+        if (i === letters.length - 1) {
+          showSubTitle()
+        }
+      }
+    });
+  }
+}, 500);
