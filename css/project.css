@@ -94,9 +94,7 @@
 .projects-inner .mobile{position: relative;display: flex;flex-direction: column;max-width: 1400px;margin: 0 auto;}
 .projects-inner .mobile>div{position: relative;padding: 100px 0px;}
 .projects-inner .mobile>div .project-img{position: sticky; top: calc(70vh - 180px); display: inline-block; margin-top: 0px;}
-.projects-inner .mobile>div .project-img figure.device::after{z-index: -10; position: absolute; display: block; background: #4f4f4f; content: ""; left: 0; top: 380px;  width: 100%; height: 750px;}
-.projects-inner .mobile>div .project-img figure.device img{position: relative; width: 600px;}
-.projects-inner .mobile>div .project-img .product{z-index: -1; position: absolute;left: 17px; top: 50%; transform: translateY(-50%); width: 205px; border-radius: 10px;}
+.projects-inner .mobile>div .project-img .product{z-index: -1; position: absolute;left: 120px; height: 600px; top: 50%; transform: translateY(-50%); width: 190px; border-radius: 10px;}
 .projects-inner .mobile>div .description{max-width: 600px;}
 .projects-inner .mobile>div .description h3{position: relative; padding-bottom: 30px; font-size: var(--font-size--large);font-weight: var(--font-weght-semibold);}
 .projects-inner .mobile>div .description h3 .sub_title{font-size: var(--font-size--small); color: #fff; opacity: 0.5; font-weight: 300;}
@@ -119,6 +117,8 @@
 .projects-inner .mobile .project-4 .project-img{flex: 1; order: 1; display: flex; justify-content: flex-start;}
 .projects-inner .mobile .project-4 .project-img figure{position: relative; margin-left: 800px;}
 .projects-inner .mobile .project-4 .description{flex: 1; order: 2; margin-left: 0px;}
+
+.projects-inner .mobile .project-4:nth-child(2) .project-img .product {left: 17px;}
 
 /* mobile-project6 */
 .projects-inner .mobile .project-5 {position: relative;margin: 0 80px;}
