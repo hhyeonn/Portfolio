@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>hyehyeon Park Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/style.js"></script>
+    <link href="css/style.css" rel="stylesheet"/>
+    <script defer src="js/style.js"></script>
 </head>
 <body>
 <div id="wrap">
@@ -14,10 +14,9 @@
         <div class="header-inner inner">
             <h1><a href="index.html">Portfolio</a></h1>
             <nav class="header-nav">
-                <!-- span -->
                 <ul>
-                    <li><a href="#Home">Home</a></li>
-                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#main">Home</a></li>
+                    <li><a href="#about-me">About Me</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -27,119 +26,98 @@
     <main id="main">
         <section id="about">
             <div class="about-inner inner">
-                <h1>hyehyeon Park Portfolio</h1>
-                <div class="introduce">
-                    <h2>About me</h2>
-                    <div class="introduce-inner">
-                        <div class="profile">
-                            <dl>
-                                <dt class="blind">프로필 사진</dt>
-                                <dd class="profile-img"></dd>
-                            </dl>
-                        </div>
-                        <div class="discription">
-                            <dl>
-                                <dt>Skill</dt>
-                                <dd>HTML, CSS(SCSS), jQuery, JS, React</dd>
-                            </dl>
-                            <dl>
-                                <dt >Overview</dt>
-                                <dd class="self">
-                                    <ul>
-                                        <li>제가 배운 기술로 사람들에 보여지고 쓰이는 사이트가 만들어져 나가는 과정에 흥미를 느낍니다.
-                                            꾸준한 성장을 모토로 배움을 멈추지 않습니다. 
-                                            화려한 기술보다 기본기가 탄탄한, 새로운 기술을 배우는것과 시도하는것을 두려워 하지않는 프론트엔드 개발자가 되겠습니다.
-                                        </li>
-                                    </ul>
-                                </dd>
-                            </dl>
-                            <dl class="channel">
-                                <dt>Channel</dt>
-                                <dd><a href="https://github.com/hhyeonn" target="_blank" title="새창으로 열기">Github</a></dd>
-                            </dl>
-                        </div>
-                        <div class="scroll"><span></span></div>
+                <div class="cercleRotateContainer">
+                    <div class="cercle"></div>
+                </div>
+                <div class="cercleRotateContainer">
+                    <div class="cercle"></div>
+                </div>
+                <div class="cercleRotateContainer">
+                    <div class="cercle"></div>
+                </div>
+                <h1 style="z-index: 10;">
+                    Front-end developer<br>
+                    hyehyeon Park
+                </h1>
+            </div>
+        </section>
+        <section id="about-me">
+            <div class="introduce">
+                <h2>About me</h2>
+                <div class="introduce-inner">
+                    <div class="profile">
+                        <dl>
+                            <dt class="blind">프로필 사진</dt>
+                            <dd class="profile-img"></dd>
+                        </dl>
                     </div>
+                    <div class="discription">
+                        <dl>
+                            <dt>Skills</dt>
+                            <dd><img src="images/html5.png" />HTML</dd>
+                            <dd><img src="images/css.png" />CSS</dd>
+                            <dd><img src="images/javascript.png" /> javascript</dd>
+                            <dd><img src="images/react.png" />React</dd>
+                        </dl>
+                        <dl>
+                            <dt>ect</dt>
+                            <dd><img src="images/Adobe_Illustrator.png" /> illustrator</dd>
+                            <dd><img src="images/2020adobe.png" /> phtoshop</dd>
+                            <dd><img src="images/figma.jpg" /> Figma</dd>
+                            <dd><img src="images/Visual_Studio_Code.png" /> Visual Studio Code</dd>
+                            <dd><img src="images/firebase.png" />firebase</dd>
+                        </dl>
+                        <dl>
+                            <dt>Overview</dt>
+                            <dd class="self">
+                                <ul>
+                                    <li>제가 배운 기술로 사람들에게 보여지고 쓰이는 사이트가 만들어져 나가는 과정에 흥미를 느낍니다.<br><br>
+                                        꾸준한 성장을 모토로 배움을 멈추지 않습니다. 
+                                        화려한 기술보다 기본기가 탄탄한, 새로운 기술을 배우는것과 시도하는것을 두려워 하지않는 프론트엔드 개발자가 되겠습니다.
+                                    </li>
+                                </ul>
+                            </dd>
+                        </dl>
+                    </div>
+                    <!-- <div class="scroll"><span></span></div> -->
                 </div>
             </div>
         </section>
         <section id="projects">
             <div class="projects-inner inner">
-                <h1>Projects</h1>
                 <div class="pc">
                     <div class="project-1">
-                        <div class="num">01</div>
+                        <div class="num">Project 1</div>
                         <div class="project-img">
                             <figure class="device">
-                                <img src="images/tablet_mockup.png" alt="태블릿 목업">
+                                <img src="images/imac.png" alt="pc목업">
                             </figure>
                             <figure class="product">
-                                <img src="images/thetastable_screen.png" alt="데테이스터블 프로젝트">
+                                <img src="images/삼성전기web.png" alt="삼성전기">
                             </figure>
                         </div>
                         <div class="description">
-                            <h2>
-                                <span class="sub_title">기업 사이트_반응형 웹Ⅰ</span><br>
-                                <span class="main_title">더테이스터블</span>
-                            </h2>
+                            <h3>
+                                <span class="main_title">기업 사이트 웹 표준/접근성_<br>삼성전기</span>
+                            </h3>
                             <dl>
-                                <dt>작업 기간</dt>
-                                <dd>2022.02 ~ 2022.04</dd>
+                                <dt>Language</dt>
+                                <dd>HTML, CSS, JavaScript</dd>
                             </dl>
                             <dl>
-                                <dt>기여도</dt>
-                                <dd>FE(100%)</dd>
-                            </dl>
-                            <dl>
-                                <dt>사용 언어</dt>
-                                <dd>HTML, CSS, JS</dd>
-                            </dl>
-                            <dl>
-                                <dt>프로젝트 개요</dt>
+                                <dt class="blind">프로젝트 개요</dt>
                                 <dd>
-                                    HTML, CSS, JS를 사용한 웹 사이트 제작 숙련도 향상을 위해 진행하였고, 코드 리팩토링을 통해 코드 효율성과 가독성 향상됨
-                                </dd>
-                            </dl>
-                            <dl>
-                                <dt>주요 업무</dt>
-                                <dd>
-                                    <ul>
-                                        <li>페이지별 주요 기술
-                                            <ul>
-                                                <li>메인 : JS를 사용하여 다양한 인터렉션 구현
-                                                </li>
-                                                <li>서브1 : form 속성을 사용하여 고객센터 페이지 구현</li>
-                                                <li>서브2 : table 속성을 사용하여 채용정보 페이지 구현</li>
-                                            </ul>
-                                        </li>
-                                        <li>코드 리팩토링
-                                            <ul>
-                                                <li>JS에서 3회이상 중복되는 코드는 함수로 만들어 호출하여 코드 효율성과 재사용성을 높임</li>
-                                                <li>JS에서 resize나 reroad시 업데이트가 필요한 데이터를 관리하는 함수를 만들었고, 이를통해 데이터 관리 효율 증가</li>
-                                            </ul>
-                                        </li>
-                                        <li>반응형 웹 개발
-                                            <ul>
-                                                <li>PC, Tablet, Mobile</li>
-                                            </ul>
-                                        </li>
-                                        <li>웹 표준 준수
-                                            <ul>
-                                                <li>웹 접근성 준수</li>
-                                                <li>HTML/CSS W3C 유효성검사 Pass</li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                    HTML, CSS, Javascript를 사용한 웹 사이트 제작 숙련도 향상을 위해 진행하였고, 코드 리팩토링을 통해 코드 효율성과 가독성이 향상되었습니다. 웹 표준/접근성 준수하여 제작된 사이트 입니다.
                                 </dd>
                             </dl>
                             <dl class="site">
                                 <dt class="blind">참고 자료</dt>
                                 <dd>
                                     <ul>
-                                        <li><a href="" target="_blank" title="새창으로 열기">메인 페이지</a></li>
-                                        <li><a href="" target="_blank" title="새창으로 열기">서브 페이지 1</a></li>
-                                        <li><a href="" target="_blank" title="새창으로 열기">서브 페이지 2</a></li>
-                                        <li><a href="" target="_blank" title="새창으로 열기">Github</a></li>
+                                        <li><a href="https://github.com/hhyeonn/Webproject01" target="_blank" title="새창으로 열기">Github</a></li>
+                                        <li><a href="https://hhyeonn.github.io/Webproject01/" target="_blank" title="새창으로 열기">메인 페이지</a></li>
+                                        <li><a href="https://hhyeonn.github.io/Webproject01/sub1.html" target="_blank" title="새창으로 열기">sub 1</a></li>
+                                        <li><a href="https://hhyeonn.github.io/Webproject01/sub2.html" target="_blank" title="새창으로 열기">sub 2</a></li>
                                     </ul>
                                 </dd>
                             </dl>
@@ -148,66 +126,37 @@
                         </div>
                     </div>
                     <div class="project-2">
-                        <div class="num">02</div>
+                        <div class="num">Project 2</div>
                         <div class="project-img">
                             <figure class="device">
-                                <img src="images/tablet_mockup.png" alt="태블릿 목업">
+                                <img src="images/imac.png" alt="pc목업">
                             </figure>
                             <figure class="product">
-                                <img src="images/cjone_screen.png" alt="NIsystem 프로젝트">
+                                <img src="images/cj_pc.png" alt="CJ ONE">
                             </figure>
                         </div>
                         <div class="description">
-                            <h2>
-                                <span class="sub_title">기업 사이트_반응형 웹Ⅱ</span><br>
-                                <span class="main_title">CJ ONE</span>
-                            </h2>
+                            <h3>
+                                <span class="main_title">기업 사이트/반응형 웹_CJ ONE</span>
+                            </h3>
                             <dl>
-                                <dt>작업 기간</dt>
-                                <dd>2022.02 ~ 2022.03</dd>
+                                <dt>Language</dt>
+                                <dd>HTML, CSS, JavaScript</dd>
                             </dl>
                             <dl>
-                                <dt>기여도</dt>
-                                <dd>FE(100%)</dd>
-                            </dl>
-                            <dl>
-                                <dt>사용 언어</dt>
-                                <dd>HTML, CSS, jQeury, JS</dd>
-                            </dl>
-                            <dl>
-                                <dt>프로젝트 개요</dt>
-                                <dd>이미지 애니메이션 효과를 익히고 아티클의 레이아웃을 다앙하게 적용해보기 위해 CJONE의 메인 페이지를 제작</dd>
-                            </dl>
-                            <dl>
-                                <dt>주요 업무</dt>
+                                <dt class="blind">프로젝트 개요</dt>
                                 <dd>
-                                    <ul>
-                                        <li>주요 기술
-                                            <ul>
-                                                <li>dataset 속성을 사용하여 탭 메뉴 구현, JS를 사용하여 이미지 애니메이션 효과, 오토 배너, 다수의 인터렉션 구현</li>
-                                            </ul>
-                                        </li>
-                                        <li>jQeury로 작성한 코드를 JS로 변경하며 jQeury와 JS의 차이점 직접 경험, JS에 대한 이해도 증가</li>
-                                        <li>반응형 웹 개발
-                                            <ul>
-                                                <li>PC, Tablet, Mobile</li>
-                                            </ul>
-                                        </li>
-                                        <li>웹 표준 준수
-                                            <ul>
-                                                <li>웹 접근성 준수</li>
-                                                <li>HTML/CSS W3C유효성검사 Pass</li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                    이미지 애니메이션 효과를 익히고 아티클의 레이아웃을 다앙하게 적용해보기 위해 CJONE의 메인 페이지를 제작 하였습니다.
+                                    웹 표준/접근성성에 맞게 제작하여, 사이트에 있는 기능을 똑같이 재현 했습니다.
+                                    검색창, 스크롤 이벤트, 탑버튼 등의 기능을 넣어서 반응형으로 제작하였습니다.
                                 </dd>
                             </dl>
                             <dl class="site">
                                 <dt class="blind">참고 자료</dt>
                                 <dd>
                                     <ul>
-                                        <li ><a href="" target="_blank" title="새창으로 열기">View Web</a></li>
-                                        <li><a href="" target="_blank" title="새창으로 열기">Github</a></li>
+                                        <li><a href="https://github.com/hhyeonn/Webproject02" target="_blank" title="새창으로 열기">Github</a></li>
+                                        <li ><a href="https://hhyeonn.github.io/Webproject02/" target="_blank" title="새창으로 열기">View Web</a></li>
                                     </ul>
                                 </dd>
                             </dl>
@@ -216,50 +165,38 @@
                         </div>
                     </div>
                     <div class="project-3">
-                        <div class="num">03</div>
+                        <div class="num">Project 3</div>
                         <div class="project-img">
                             <figure class="device">
-                                <img src="images/tablet_mockup.png" alt="태블릿 목업">
+                                <img src="images/imac.png" alt="pc목업">
                             </figure>
                             <figure class="product">
-                                <img src="images/nisystem_screen.png" alt="NIsystem 프로젝트">
+                                <img src="images/hera_pc.png" alt="pc목업">
                             </figure>
                         </div>
                         <div class="description">
-                            <h2>
-                                <span class="sub_title">기업 사이트_실제 사이트 개발</span><br>
-                                <span class="main_title">NIsystem</span>
-                            </h2>
+                            <h3>
+                                <span class="main_title">기업 사이트/반응형 웹_헤라</span>
+                            </h3>
                             <dl>
-                                <dt>작업 기간</dt>
-                                <dd>2022.03 ~ 2022.04</dd>
+                                <dt>Language</dt>
+                                <dd>HTML, CSS, JavaScript</dd>
                             </dl>
                             <dl>
-                                <dt>기여도</dt>
-                                <dd>디자인, FE(1명, 본인 100%) / Server(1명)</dd>
-                            </dl>
-                            <dl>
-                                <dt>사용 언어<br>및 개발 환경</dt>
-                                <dd>HTML, CSS, JavaScript, Xen server, Linux(CentOs7.9)</dd>
-                            </dl>
-                            <dl>
-                                <dt>프로젝트 개요</dt>
-                                <dd>업종의 특성상 신뢰도가 중요하기에 신뢰를 주는 파란색 계열로 이미지와 아이콘 색상 톤을 맞추었고, 신생회사라 홈페이지의 컨셉과 컨텐츠 내용의 변경을 고려하여 한 페이지로 개발.</dd>
-                            </dl>
-                            <dl>
-                                <dt>주요 업무</dt>
+                                <dt class="blind">프로젝트 개요</dt>
                                 <dd>
-                                    <ul>
-                                        <li>검색엔진 최적화(SEO)</li>
-                                        <li>Kakao Maps API 사용하여 회사 위치 안내</li>
-                                    </ul>
+                                    헤라 메인페이지와 락앤락의 서브 페이지를 참고하여 만든 반응형 웹사이트 입니다.
+                                    미디어쿼리를 이용하여 PC, Tablet, Moblie에서 자동으로 해상도와 레이아웃이 변경됩니다.
                                 </dd>
                             </dl>
                             <dl class="site">
                                 <dt class="blind">참고 자료</dt>
                                 <dd>
                                     <ul>
-                                        <li ><a href="" target="_blank" title="새창으로 열기">HomePage</a></li>
+                                        <li><a href="https://github.com/hhyeonn/Webproject03" target="_blank" title="새창으로 열기">Github</a></li>
+                                        <li ><a href="https://hhyeonn.github.io/Webproject03/" target="_blank" title="새창으로 열기">View Web</a></li>
+                                        <li><a href="https://hhyeonn.github.io/Webproject03/sub1_%EA%B2%BD%EC%98%81%EC%A0%95%EB%B3%B4.html" target="_blank" title="새창으로 열기">sub 1</a></li>
+                                        <li><a href="https://hhyeonn.github.io/Webproject03/sub2_%EB%AC%B8%EC%9D%98%ED%95%98%EA%B8%B0.html" target="_blank" title="새창으로 열기">sub 2</a></li>
                                     </ul>
                                 </dd>
                             </dl>
@@ -268,128 +205,100 @@
                 </div>
                 <div class="mobile">
                     <div class="project-4">
-                        <span class="num">04</span>
+                        <span class="num">Project 4</span>
                         <div class="project-img">
                             <figure>
-                                <img class="device" src="" alt="핸드폰 목업">
-                                <img class="product" src="" alt="chatting talk 프로젝트">
+                                <img class="device" src="images/iPhone.png" alt="핸드폰 목업" style="width: 400px;">
+                                <img class="product" src="" alt="Kakao talk 프로젝트">
                             </figure>
                         </div>
                         <div class="description">
-                            <h2>
+                            <h3>
                                 <span class="sub_title">모바일 웹_HTML & React</span><br>
-                                <span class="main_title">Chatting Talk</span>
-                            </h2>
+                                <span class="main_title">Kakao Talk</span>
+                            </h3>
                             <dl>
-                                <dt>작업 기간</dt>
-                                <dd>2022.04</dd>
-                            </dl>
-                            <dl>
-                                <dt>기여도</dt>
-                                <dd>FE(100%)</dd>
-                            </dl>
-                            <dl>
-                                <dt>사용 언어</dt>
+                                <dt>Language</dt>
                                 <dd>HTML/CSS , SCSS/React</dd>
                             </dl>
                             <dl>
-                                <dt>프로젝트 개요</dt>
-                                <dd>FlexBox 속성을 이용하여 레이아웃을 작성하였고, React의 숙련도를 높이기 위해 HTML과 CSS로 작성한 코드를 SCSS와 React로 변경</dd>
-                            </dl>
-                            <dl>
-                                <dt>주요 업무</dt>
-                                <dd>
-                                    <ul>
-                                        <li>SCSS/React 주요 기술
-                                            <ul>
-                                                <li>SPA 방식으로 개발</li>
-                                                <li>Hooks(useState, useEffect) </li>
-                                                <li>유저의 정보는 axios로 가상데이터 Json Api 호출</li>
-                                            </ul>
-                                        </li>
-                                        <li>HTML/CSS 주요 기술
-                                            <ul>
-                                                <li>FlexBox 속성을 사용하여 레이아웃 작성</li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </dd>
+                                <dt class="blind">프로젝트 개요</dt>
+                                <dd>FlexBox 속성을 이용하여 레이아웃을 작성하였고, React의 숙련도를 높이기 위해 HTML과 CSS로 작성한 코드를 SCSS와 React로 변경하였습니다.</dd>
                             </dl>
                             <dl class="site">
                                 <dt class="blind">참고 자료</dt>
                                 <dd>
                                     <ul>
-                                        <li ><a href="" target="_blank" title="새창으로 열기" onClick="window.open(this.href,'','left=700, top=50, width=390, height=844'); return false;">React Web</a></li>
-                                        <li ><a href="" target="_blank" title="새창으로 열기" onClick="window.open(this.href,'','left=700, top=50, width=390, height=844'); return false;">HTML Web</a></li>
-                                        <li><a href="" target="_blank" title="새창으로 열기">React Github</a></li>
-                                        <li><a href="" target="_blank" title="새창으로 열기">HTML Github</a></li>
+                                        <li><a href="#" target="_blank" title="새창으로 열기" onClick="window.open(this.href,'','left=700, top=50, width=390, height=844'); return false;">React Web</a></li>
+                                        <li><a href="#" target="_blank" title="새창으로 열기" onClick="window.open(this.href,'','left=700, top=50, width=390, height=844'); return false;">HTML Web</a></li>
+                                        <li><a href="#" target="_blank" title="새창으로 열기">React Github</a></li>
+                                        <li><a href="#" target="_blank" title="새창으로 열기">HTML Github</a></li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="project-4">
+                        <span class="num">Project 5</span>
+                        <div class="project-img">
+                            <figure>
+                                <img class="device" src="images/iPhone.png" alt="핸드폰 목업" style="width: 400px;">
+                                <img class="product" src="" alt="Netflix 프로젝트">
+                            </figure>
+                        </div>
+                        <div class="description">
+                            <h3>
+                                <span class="sub_title">모바일 웹_HTML & React</span><br>
+                                <span class="main_title">Netflix</span>
+                            </h3>
+                            <dl>
+                                <dt>Language</dt>
+                                <dd>HTML/CSS , SCSS/React</dd>
+                            </dl>
+                            <dl>
+                                <dt class="blind">프로젝트 개요</dt>
+                                <dd>FlexBox 속성을 이용하여 레이아웃을 작성하였고, React의 숙련도를 높이기 위해 HTML과 CSS로 작성한 코드를 SCSS와 React로 변경하였습니다.</dd>
+                            </dl>
+                            <dl class="site">
+                                <dt class="blind">참고 자료</dt>
+                                <dd>
+                                    <ul>
+                                        <li><a href="#" target="_blank" title="새창으로 열기" onClick="window.open(this.href,'','left=700, top=50, width=390, height=844'); return false;">React Web</a></li>
+                                        <li><a href="#" target="_blank" title="새창으로 열기" onClick="window.open(this.href,'','left=700, top=50, width=390, height=844'); return false;">HTML Web</a></li>
+                                        <li><a href="#" target="_blank" title="새창으로 열기">React Github</a></li>
+                                        <li><a href="#" target="_blank" title="새창으로 열기">HTML Github</a></li>
                                     </ul>
                                 </dd>
                             </dl>
                         </div>
                     </div>
                     <div class="project-5">
-                        <div class="num">05</div>
+                        <div class="num">Project 6</div>
                         <div class="project-img">
                             <figure>
                                 <img class="device" src="images/iphone_mockup.png" alt="핸드폰 목업">
-                                <img class="product" src="images/homecent.png" alt="홈센트 프로젝트">
+                                <img class="product" src="" alt="넷플릭스 프로젝트">
                             </figure>
                         </div>
                         <div class="description">
-                            <h2>
-                                <span class="sub_title">모바일 웹 기획&UIUX Design&UI개발</span><br>
-                                <span class="main_title">Homecent</span>
-                            </h2>
+                            <h3>
+                                <span class="sub_title">모바일 웹 기획&UIUX Design</span><br>
+                                <span class="main_title">Closet</span>
+                            </h3>
                             <dl>
-                                <dt>작업 기간</dt>
-                                <dd>2021.12 ~ 2022.04</dd>
+                                <dt>Language&Tool</dt>
+                                <dd>HTML, CSS, XD, figma</dd>
                             </dl>
                             <dl>
-                                <dt>기여도</dt>
-                                <dd>기획, UIUX Design, UI개발(100%)</dd>
-                            </dl>
-                            <dl>
-                                <dt>사용 언어 및 툴</dt>
-                                <dd>HTML, CSS, XD</dd>
-                            </dl>
-                            <dl>
-                                <dt>프로젝트 개요</dt>
-                                <dd>가전제품 중고거래 모바일 웹을 기획하고 UIUX Design, UI 개발. 모바일 웹 제작의 전반적인 업무를 경험하기 위한 프로젝트.</dd>
-                            </dl>
-                            <dl>
-                                <dt>주요 업무</dt>
-                                <dd>
-                                    <ul>
-                                        <li>기획
-                                            <ul>
-                                                <li>경쟁사 분석, 정보구조 설계, SWOT 분석, 페르소나 분석, Business Model Canvas, 사용자 조사, 프로토타입 설계 등</li>
-                                            </ul> 
-                                        </li>
-                                        <li>모바일 웹 UI개발
-                                            <ul>
-                                                <li>홈, 상품 등록, 채팅, 로그인, 회원가입, 아이디 찾기, 비밀번호 찾기 UI개발</li>
-                                            </ul>
-                                        </li>
-                                        <li>주요 기술
-                                            <ul>
-                                                <li>CSS 코드 중 중복 사용되는 header, navigation, banner, button 코드를 Components 폴더에 파일별로 분리하여 작성하였고, 이를 통해 중복 사용되는 코드의 재사용성 높임</li>
-                                                <li>CSS에서 자주 사용하는 값은 CSS Variable로 만들어 사용하였고, 이를 통해 유지 보수 효율 증가</li>
-                                                <li>CSS BEM 방식으로 class name 작성하여 가독성 높임</li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </dd>
+                                <dt class="blind">프로젝트 개요</dt>
+                                <dd>패션,라이프 쇼핑 모바일 웹과 UIUX Design을 기획했습니다. 모바일 웹 제작의 전반적인 업무를 경험하기 위한 프로젝트 입니다.</dd>
                             </dl>
                             <dl class="site">
                                 <dt class="blind">참고 자료</dt>
                                 <dd>
                                     <ul>
-                                        <li ><a href="" target="_blank" title="새창으로 열기">기획서</a></li>
-                                        <li ><a href="" target="_blank" title="새창으로 열기">Design</a></li>
-                                        <li ><a href="" target="_blank" title="새창으로 열기">Landing Page</a></li>
-                                        <li ><a href="" target="_blank" title="새창으로 열기" onClick="window.open(this.href,'','left=700, top=50, width=390, height=844'); return false;">Mobile Web</a></li>
-                                        <li><a href="" target="_blank" title="새창으로 열기">Github</a></li>
+                                        <li ><a href="#" target="_blank" title="새창으로 열기">기획서</a></li>
+                                        <li ><a href="#" target="_blank" title="새창으로 열기">Design</a></li>
                                     </ul>
                                 </dd>
                             </dl>
@@ -401,7 +310,20 @@
         </section>
         <section id="contact">
             <div class="contact-inner inner">
-                <h1>Contact</h1>
+                <h2>Contact</h2>
+                <h3>
+                    <span id="thank">
+                        <span class="title-letter">T</span>
+                        <span class="title-letter">h</span>
+                        <span class="title-letter">a</span>
+                        <span class="title-letter">n</span>
+                        <span class="title-letter">k</span>
+                        <span class="title-letter">&nbsp;</span>
+                        <span class="title-letter">y</span>
+                        <span class="title-letter">o</span>
+                        <span class="title-letter">u</span>
+                    </span>
+                </h3>
                 <div class="call">
                     <dl>
                         <dt>Phone</dt>
@@ -413,7 +335,7 @@
                     </dl>
                     <dl class="channel">
                         <dt>Github</dt>
-                        <dd><a href="https://github.com/hhyeonn" target="_blank" title="새창으로 열기">Github</a></dd>
+                        <dd><a href="https://github.com/hhyeonn" target="_blank" title="새창으로 열기">https://github.com/hhyeonn</a></dd>
                     </dl>
                 </div>
             </div>
