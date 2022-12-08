@@ -40,6 +40,7 @@
                     hyehyeon Park
                 </h1>
             </div>
+            <p class="scroll">Scroll Down!</p>
         </section>
         <section id="about-me">
             <div class="introduce">
@@ -79,7 +80,6 @@
                             </dd>
                         </dl>
                     </div>
-                    <!-- <div class="scroll"><span></span></div> -->
                 </div>
             </div>
         </section>
@@ -118,7 +118,27 @@
                                         <li><a href="https://hhyeonn.github.io/Webproject01/" target="_blank" title="새창으로 열기">메인 페이지</a></li>
                                         <li><a href="https://hhyeonn.github.io/Webproject01/sub1.html" target="_blank" title="새창으로 열기">sub 1</a></li>
                                         <li><a href="https://hhyeonn.github.io/Webproject01/sub2.html" target="_blank" title="새창으로 열기">sub 2</a></li>
-                                        <li><a href="#" target="_blank" title="새창으로 열기">웹 표준/접근성</a></li>
+                                        <li id="btnmodal" style="padding: 10px 0;">웹 표준/접근성
+                                            <div id="modal" class="modal-overlay">
+                                                <div class="modal-window">
+                                                  <div class="title">
+                                                      <h2>웹 표준/접근성 검사</h2>
+                                                  </div>
+                                                  <div class="close-area">X</div>
+                                                  <div class="content">
+                                                    <div class="content-1">
+                                                      <p>W3C html,css 유효성 검사를 통과했습니다.</p>
+                                                      <img src="images/삼성전기_w3c.png" alt="" style="width: 550px; height: 300px;" >
+                                                    </div>
+                                                    <div class="content-2">
+                                                       <p>웹 접근성 검사로 오류가 없는 것을 확인 했습니다.</p>
+                                                      <img src="images/삼성전기 웹 접근성.JPG" alt="" style="width: 500px; height: 530px;">           
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                              </div>
+                                        </a>
+                                        </li>
                                     </ul>
                                 </dd>
                             </dl>
@@ -227,7 +247,7 @@
                             </dl>
                             <dl>
                                 <dt class="blind">프로젝트 개요</dt>
-                                <dd>FlexBox 속성을 이용하여 레이아웃을 작성하였고, React의 숙련도를 높이기 위해 HTML과 CSS로 작성한 코드를 SCSS와 React로 변경하였습니다.</dd>
+                                <dd>React와 Flexbox를 사용하여 작업한 카카오톡 앱입니다. Firebase를 기반으로 회원가입, 로그아웃, 메세지 보내기 기능을 구현 했습니다. Axios를 사용하여 사용자 Api를 호출하여 데이터를 전달, Sass(SCSS)를 활용하여 스타일 적용, React Router를 이용하여 SPA 구현리액트 라우터 돔을 이용해 spa를 구현 하였습니다.</dd>
                             </dl>
                             <dl class="site">
                                 <dt class="blind">참고 자료</dt>
@@ -242,12 +262,12 @@
                     </div>
                     <div class="project-4">
                         <span class="num">Project 5</span>
-                        <div class="project-img">
+                        <div class="project-img" style="padding-bottom: 25px;">
                             <figure>
-                                <video autoplay="" loop="" muted="" class="product" style="width: 418px;height: 320px;object-fit: fill;border-radius: 10px;">
+                                <video autoplay="" loop="" muted="" class="product" style="width: 518px;height: 385px;object-fit: fill;border-radius: 10px;">
                                     <source src="images/netflix.mp4" type="video/mp4">
                                 </video>
-                                <img class="device" src="images/ipad png_90.png" alt="테블릿 목업" style="width: 450px;">
+                                <img class="device" src="images/ipad png_90.png" alt="테블릿 목업" style="width: 550px;">
                             </figure>
                         </div>
                         <div class="description">
@@ -261,7 +281,7 @@
                             </dl>
                             <dl>
                                 <dt class="blind">프로젝트 개요</dt>
-                                <dd>firebase를 사용해 실시간 데이터 베이스를 연결하여 로그인 인증구현 하였고, axios를 통해 비동기적으로 API를 호출, 브라우저에 맞게react-router-dom과 hook함수를 사용하여 디바이싱 했습니다. 검색창과 기능을 구현했습니다.</dd>
+                                <dd>Firebase Auth를 사용해 실시간 데이터 베이스를 연결하여 로그인 인증구현 하였습니다. axios를 통해 비동기적으로 API를 호출, 브라우저에 맞게 React-router-dom과 hook함수를 사용하여 디바이싱 했습니다. </dd>
                             </dl>
                             <dl class="site">
                                 <dt class="blind">참고 자료</dt>
@@ -278,8 +298,8 @@
                         <div class="num">Project 6</div>
                         <div class="project-img">
                             <figure>
-                                <img class="device" src="images/" alt="">
-                                <img class="product" src="" alt="?프로젝트">
+                                <img class="device" src="images/ipad png_90.png" alt="테블릿 목업" style="width: 580px;">
+                                <img class="product" src="images/main.png" alt="UI/UX디자인">
                             </figure>
                         </div>
                         <div class="description">
