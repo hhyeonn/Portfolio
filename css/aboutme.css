@@ -42,30 +42,20 @@
 .introduce-inner .discription dl dd img {width: 45px;}
 .introduce-inner .discription dl dd>ul{padding-bottom: 10px; list-style: none;}
 
-
-/* .introduce-inner .discription dl.channel dd{display: inline-block; margin-right: 5px; background: rgba(255, 255, 255, 0.4);}
-.introduce-inner .discription dl.channel dd:hover{background-color: #fff;}
-.introduce-inner .discription dl.channel dd a{display: block; padding: 5px 10px; color: #000;} */
-
-/* scroll-circle */
-.about-inner .scroll{opacity: 1; position: fixed; right: 100px; bottom: 50px; width: 100px; height: 100px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.4);transition: 0.3s;}
-@keyframes scroll{
-    0%{transform: translateY(-25px);}
-    40%,60%{transform: translateY(0px);}
-    100%{transform: translateY(25px);}
+/* Scroll Down */
+#about .scroll {
+	position: absolute;
+	bottom: -150px;right: 30px;
+	animation: 1.5s bounce ease-in-out infinite;
 }
-.about-inner .scroll span{position: absolute; left: 50%; top: 50%; transform: translateX(-50%) translateY(-50%); display: block; width: 100px; height: 25px; overflow: hidden;}
-.about-inner .scroll span::after{opacity: 0.4;position: absolute;margin-left: 25px; display: inline-block; content: "scroll";font-size: 20px;animation: scroll 2.5s linear infinite;}
-
-.about-inner .introduce .introduce-inner .scroll::before{position: absolute; content: "Projects♡"; width: 100%; height: 100%; color: #000;text-align: center;line-height: 100px; background-color: #fff; border-radius: 50%; transform: scale(0); transition: 0.3s;}
-.about-inner .introduce .introduce-inner .scroll:hover::before{display: block; transform: scale(1);}
-.about-inner .introduce .introduce-inner .scroll:hover span::after{opacity: 0;}
-
-#about.active .about-inner .scroll{ opacity: 0; transform: scale(0);}
-
-@media screen and (max-width: 1530px) {
-	.about-inner h1 .js-move{left: -160px; right: auto; bottom: -130px;}
-	.about-inner h1 .js-move .txt{ font-size:  calc(var(--font-size--h1) * 0.5);}
-	.about-inner h1 .js-move .icon-js{font-size: calc(var(--font-size--h1) * 3);}
-	.about-inner .scroll{left: 100px; width: 85px; height: 85px;}
-}
+@keyframes bounce {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(20px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
