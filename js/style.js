@@ -63,11 +63,9 @@ window.onload = () => {
 // about
 
   const aboutTitle = document.querySelector('#about h1');
-  const jsMove = document.querySelector('.js-move');
   function aboutTitleShow() {
       aboutTitle.classList.add('active');
   }
-
 
   // 스크롤을 내리면 h1의 위치가 위로 서서히 올라감
   function aboutHeadingMoveUp() {
@@ -84,46 +82,33 @@ window.onload = () => {
           sectionAbout.classList.remove('active');
       }
   };
-  
-  // JS Icon의 위치를 마우스의 좌표값으로 설정
-//   sectionAbout.addEventListener('mousemove', (event) => {
-//       const x = event.clientX;
-//       const y = event.clientY;
-//       jsMove.style.transform = `translateX(${-x / 5}px) translateY(${-y / 4}px)`;
-//   });
-
-
-
 
 /* ------------------------------------------------------------------*/
 // projects
 
-//   스크롤을 내릴때 프로젝트 전체 섹션이 위로 올라간다.
-//   function projectMoveUp() {
-//       setProperty();
-//       const parallaxStartValue = 300;
-//       const aboutScrollPercent = scrollY / aboutH;   
-//       const scrollDistance = Math.max(parallaxStartValue - parallaxStartValue, Math.min(parallaxStartValue, parallaxStartValue - (parallaxStartValue * aboutScrollPercent)));
-//       sectionProject.style.transform = `translateY(${scrollDistance}px)`;
-//   }
+// 웹표준/접근성 팝업창
+  const btnModal = document.getElementById("btnmodal")
+  const modal = document.getElementById("modal")
+  const closeBtn = modal.querySelector(".close-area")
+
+  btnModal.addEventListener("click", e => {
+      modal.style.display = "flex"
+  })
+
+  closeBtn.addEventListener("click", e => {
+      modal.style.display = "none"
+  })
+
+  modal.addEventListener("click", e => {
+    const evTarget = e.target
+    if(evTarget.classList.contains("modal-overlay")) {
+        modal.style.display = "none"
+    }
+  })
 
 
   const productImg = document.querySelectorAll('.project-img');
   const projectTitle = document.querySelector('#projects h1');
-
-  // 프로젝트 타이틀이 뷰포트 안에 들어오면 밑줄이 스르르 나타나기
-//   const projectObserverObtion = {threshold: 1};
-//   const projectObserverCallback = (entries, observer) => {
-//       entries.forEach(entry => {
-//           if (entry.isIntersecting) {
-//               entry.target.classList.add('active');
-//           } else {
-//               entry.target.classList.remove('active');
-//           }
-//       });
-//   };
-//   const projectObserver = new IntersectionObserver(projectObserverCallback, projectObserverObtion);
-//   projectObserver.observe(projectTitle);
 
   // 태블릿, 모바일 목업이 뷰포트 안에 들어오면 디바이스 안의 스크린샷 이미지의 애니메이션 활성화
   const observerObtion = {
@@ -145,7 +130,7 @@ window.onload = () => {
       observer.observe(item);
   });
 
-  //mobile-project--디바이스가 옆에서 가운데로 스르르 나타나기
+  //mobile-project 디바이스가 옆에서 가운데로 나타나기
   function project4SlideShow() {
       setProperty();
       
@@ -206,29 +191,3 @@ window.onload = () => {
   init();
 
 }; //window.onload
-
-// contact
-let letters = document.getElementsByClassName('.title-letter');
-
-setTimeout(() => {
-  for (let i = 0; i < letters.length; i++) {
-    anime({
-      targets: letters[i],
-      easing: 'easeInQuad',
-      translateX: ['5px', '0'],
-      delay: 50 * i
-    });
-
-    anime({
-      targets: letters[i],
-      easing: 'easeInQuad',
-      opacity: 1,
-      delay: 60 * i,
-      complete: function(anim) {
-        if (i === letters.length - 1) {
-          showSubTitle()
-        }
-      }
-    });
-  }
-}, 500);
