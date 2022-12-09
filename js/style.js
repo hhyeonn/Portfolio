@@ -89,26 +89,25 @@ window.onload = () => {
 // 웹표준/접근성 팝업창
   const btnModal = document.getElementById("btnmodal")
   const modal = document.getElementById("modal")
-  const closeBtn = modal.querySelector(".close-area")
-
+  
   btnModal.addEventListener("click", e => {
       modal.style.display = "flex"
-  })
-
+  });
+  
+  const closeBtn = modal.querySelector(".close-area")
   closeBtn.addEventListener("click", e => {
       modal.style.display = "none"
-  })
-
+  });
+  
   modal.addEventListener("click", e => {
     const evTarget = e.target
     if(evTarget.classList.contains("modal-overlay")) {
         modal.style.display = "none"
     }
-  })
+  });
 
 
   const productImg = document.querySelectorAll('.project-img');
-  const projectTitle = document.querySelector('#projects h1');
 
   // 태블릿, 모바일 목업이 뷰포트 안에 들어오면 디바이스 안의 스크린샷 이미지의 애니메이션 활성화
   const observerObtion = {
