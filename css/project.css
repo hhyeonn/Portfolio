@@ -29,17 +29,30 @@
 .projects-inner h1.active::after{ width: 100%; transition:1s 0.5s; -webkit-transition:1s 0.5s; -moz-transition:1s 0.5s; -ms-transition:1s 0.5s; -o-transition:1s 0.5s; }
 
 /*modal*/
-#btnmodal {cursor: pointer;}
-#btnmodal:hover {background-color: #fff; color: #000;}
-#modal.modal-overlay {
+.pc #btnmodal {cursor: pointer;}
+.pc #btnmodal:hover {background-color: #fff; color: #000;}
+.pc .project-1 #modal.modal-overlay, .pc .project-2 #modal.modal-overlay {
     position: absolute;
     display: none;
-    width: 200%;height: 680px;left: 15%;top: -430%;
+    width: 200%;height: 680px;left: 15%;top: -400%;
     flex-direction: column;
     align-items: center;justify-content: center;
-    background: rgba(255, 255, 255, 0.55);box-shadow: 0 2px 15px 0 rgba(255, 226, 58, 0.2);backdrop-filter: blur(1.5px);-webkit-backdrop-filter: blur(1.5px);border-radius: 10px;border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.55);box-shadow: 0 2px 15px 0 rgba(255, 226, 58, 0.2);
+    backdrop-filter: blur(1.5px);-webkit-backdrop-filter: blur(1.5px);
+    border-radius: 10px;border: 1px solid rgba(255, 255, 255, 0.18);
 }
-#modal .modal-window {
+.pc .project-3 #modal.modal-overlay {
+    position: absolute;
+    display: none;
+    width: 200%;height: 680px;left: 15%;top: -500%;
+    flex-direction: column;
+    align-items: center;justify-content: center;
+    background: rgba(255, 255, 255, 0.55);box-shadow: 0 2px 15px 0 rgba(255, 226, 58, 0.2);
+    backdrop-filter: blur(1.5px);-webkit-backdrop-filter: blur(1.5px);
+    border-radius: 10px;border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.pc #modal .modal-window {
     position: relative;
     background: rgb(255, 239, 145);
     backdrop-filter: blur( 13.5px );-webkit-backdrop-filter: blur( 13.5px );
@@ -48,21 +61,21 @@
     width: 100%;height: 100%;top: -2px;
     padding: 8px;
 }
-#modal .title {
+.pc #modal .title {
     display: inline;
     padding-left: 10px;color: white;
     text-shadow: 1px 1px 2px gray;
 }
-#modal .title h2 {display: inline;font-size: 20px;}
-#modal .close-area {
+.pc #modal .title h2 {display: inline;font-size: 20px;}
+.pc #modal .close-area {
     display: inline;float: right;
     padding-right: 10px;cursor: pointer;
     font-size: 23px;text-shadow: 1px 1px 2px gray;
     color: white;
 }
-#modal .content {margin-top: 20px;padding: 0px 10px;text-shadow: 1px 1px 2px gray;color: white;}
-#modal .content .content-1 {position: absolute;left: 48px;top: 70px;}
-#modal .content .content-2 {position: absolute;right: 48px;top: 70px;}
+.pc #modal .content {margin-top: 20px;padding: 0px 10px;text-shadow: 1px 1px 2px gray;color: white;}
+.pc #modal .content .content-1 {position: absolute;left: 48px;top: 70px;}
+.pc #modal .content .content-2 {position: absolute;right: 48px;top: 70px;}
 
 /* pc-project1 */
 .projects-inner .pc .project-1{position: relative;margin: 0 80px;}
@@ -163,4 +176,5 @@
 .projects-inner .mobile .project-5 .project-img figure{ position: relative;}
 .projects-inner .mobile .project-5 .project-img figure .product{height: 405px;width: 540px;left: 20px;}
 .projects-inner .mobile .project-5 .description{flex: 1; order: 1; margin-right: 90px;}
+.projects-inner .mobile .project-5 .description h3{padding-bottom: 80px;}
 .projects-inner .mobile .project-5 .description .site {padding-bottom: 0px;}
