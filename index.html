@@ -7,6 +7,404 @@
     <title>hyehyeon Park Portfolio</title>
     <link href="css/style.css" rel="stylesheet"/>
     <script defer src="js/style.js"></script>
+    <style>
+    .emoji{
+        position: relative;display: inline-block;
+        width: 120px;height: 120px;
+        border-radius: 50%;margin: 15px 15px 40px;
+        background: #ffda6a;
+    }
+    .emoji:after{
+        content: "Emoji";
+        position: absolute;bottom: -40px;left: calc(50% - 30px);
+        width: 60px;font-size: 18px;color: #8a8a8a;
+    }
+
+    /* emoji_like */
+    .emoji_like{background: #549dff;}
+    .emoji_like:after{content: "Like";}
+
+    .emoji_like .emoji_hand{
+        position: absolute;left: 25px;
+        bottom: 30px;width: 20px;height: 40px;
+        background: #fff;border-radius: 5px;
+        animation: hands-up 2s linear 0s infinite;
+    }
+    @keyframes hands-up{
+        25%{transform: rotate(15deg);}
+        50%{transform: rotate(-15deg) translateY(-10px);}
+        75%,100%{transform: rotate(0deg);}
+    }
+
+    .emoji_like .emoji_hand:before{
+        content: "";position: absolute;
+        left: 25px;bottom: 3px;width: 40px;height: 10px;
+        background: #fff;
+        border-radius: 2px 10px 10px 2px;
+        box-shadow: 1px -9px 0 1px #fff,2px -19px 0 2px #fff,3px -29px 0 3px #fff;
+        /* box-shadow로 복제, 크기 위치 블러정도 확장/축소 색상 */
+    }
+    .emoji_like .emoji_thumb{
+        position: absolute;
+        right: -25px;top: -24px;
+        border-bottom: 20px solid #fff;
+        border-left: 20px solid transparent/* 투명 */;
+        transform: rotate(5deg);transform-origin: 0 100%;
+        animation: thumbs-up 2s linear 0s infinite;
+    }
+    @keyframes thumbs-up{
+        25%{transform: rotate(20deg);}
+        50%,100%{transform: rotate(5deg);}
+    }
+
+    .emoji_like .emoji_thumb:before{
+        content: '';
+        position: absolute;
+        left: -8.9px;top: -8px;width: 10px;height: 12px;
+        background: #fff;
+        border-radius: 50% 50% 0 0;
+        box-shadow: -1px 4px 0 -1px #fff;
+        transform: rotate(-14deg);transform-origin: 100% 100%;}
+
+    /* 2.emoji_love */
+    .emoji_love{background: #f55064;}
+    .emoji_love:after{content: "Love";}
+
+    .emoji_love .emoji_heart{
+        position: absolute;
+        left: 50%;top: 50%;
+        margin-left: -40px;margin-top: -40px;
+        width: 80px;height: 80px;;
+        animation: heart-beat 1s linear infinite alternate/* 역순 */;
+    }
+    @keyframes heart-beat{
+        25%{transform: scale(1.1);}
+        75%{transform: scale(0.6);}
+    }
+
+    .emoji_heart:before,.emoji_heart:after{
+        content: '';
+        position: absolute;left: 50%;top: 50%;
+        width: 40px;height: 64px;
+        margin-left: -20px;margin-top: -32px;
+        background: #fff;border-radius: 20px 20px 0 0;
+    }
+    .emoji_heart:before{
+        transform-origin: 0 100%;
+        transform: translateX(20px) rotate(-45deg);
+    }
+    .emoji_heart:after{
+        transform-origin: 100% 100%;
+        transform: translateX(-20px) rotate(45deg);
+    }
+
+    /* 3.emoji_haha */
+    .emoji_haha:after{content: "Haha";}
+    .emoji_haha .emoji_face{
+        position: absolute;width: 100%;height: inherit;
+        animation: haha-face 2s linear infinite normal ;
+    }
+    @keyframes haha-face{
+        10%{transform: translateY(25px);}
+        20%{transform: translateY(15px);}
+
+        30%{transform: translateY(25px);}
+        40%{transform: translateY(15px);}
+
+        50%{transform: translateY(25px);}
+        
+        60%{transform: translateY(0px);}
+        70%{transform: translateY(-10px);}
+
+        80%{transform: translateY(0px);}
+        90%{transform: translateY(-10px);}
+    }
+
+    .emoji_haha .emoji_eyes{
+        position: absolute;
+        left: 50%;top: 35px;
+        margin-left: -13px;
+        width: 26px;height: 6px;
+        border-radius: 2px;
+        box-shadow: -25px 5px 0 0 #000,25px -5px 0 0 #000;
+        transform: rotate(20deg);
+    }
+    .emoji_haha .emoji_eyes:after{
+        content: "";
+        position: absolute;
+        left: 0;top: 0;width: 26px;height: 6px;
+        border-radius: 2px;
+        box-shadow: -25px -5px 0 0 #000,25px 5px 0 0 #000;
+        transform: rotate(-40deg);
+    }
+    .emoji_haha .emoji_mouth{
+        overflow: hidden;position: absolute;
+        left: 50%;top: 50%;width: 80px;height: 40px;
+        margin-left: -40px;background: #000;
+        border-radius: 0 0 40px 40px;
+        animation: haha-mouth 2s linear infinite normal;
+    }
+    @keyframes haha-mouth{
+        10%{transform: scale(0.6);top:45%;}
+        20%{transform: scale(0.8);top:45%;}
+
+        30%{transform: scale(0.6);top:45%;}
+        40%{transform: scale(0.8);top:45%;}
+
+        50%{transform: scale(0.6);top:45%;}
+        
+        60%{transform: scale(1);top:50%;}
+        70%{transform: scale(1.2);top:50%;}
+
+        80%{transform: scale(1);top:50%;}
+        90%{transform: scale(1.1);top:50%;}
+    }
+
+    .emoji_haha .emoji_tongue{
+        position: absolute;
+        left: 50%;bottom: -10px;width: 70px;height: 30px;
+        margin-left: -35px;background: #f55064;
+        border-radius: 50%;
+    }
+
+    /* 4.emoji_yay */
+    .emoji_yay:after{content: "Yay";}
+    .emoji_yay .emoji_face{
+        position: absolute;width: 100%;height: inherit;top: 10px;
+        animation: yay-face 1s linear infinite alternate;
+    }
+    @keyframes yay-face{
+        25%{transform: rotate(-15deg);}
+        75%{transform: rotate(15deg);}
+    }
+
+    .emoji_yay .emoji_eyebrows{
+        position: absolute;
+        left: calc(50% - 3px);top: 30px;width: 6px;height: 6px;
+        border-radius: 50%;
+        box-shadow: -6px 0 0 0 #000,-36px 0 0 0 #000,6px 0 0 0 #000,36px 0 0 0 #000;
+    }
+    .emoji_yay .emoji_eyebrows:before,.emoji_yay .emoji_eyebrows:after{
+        content: "";
+        position: absolute;left: calc(50% - 18px);
+        bottom: 3px;width: 36px;height: 18px;
+        border-radius: 60px 60px 0 0;
+        border: 7px solid black;border-bottom: 0;
+        box-sizing: border-box;
+    } /* box-sizing을 넣으면 border,padding 값이 실제크기 포함 안됨. */
+    .emoji_yay .emoji_eyebrows:before{margin-left: -21px;}
+    .emoji_yay .emoji_eyebrows:after{margin-left: 21px;}
+    .emoji_yay .emoji_mouth{
+        position: absolute;
+        left: calc(50% - 3px);top: 60px;width: 6px;height: 6px;
+        border-radius: 50%;
+        box-shadow: -25px 0 0 0 #000,25px 0 0 0 #000,
+                    -35px -2px 30px 10px #d5234c,35px -2px 30px 10px #d5234c;
+    }
+    .emoji_yay .emoji_mouth:after{
+        content: "";
+        position: absolute;
+        left: calc(50% - 40px);top: -64px;width: 80px;height: 80px;
+        border-radius: 50%;border: 6px solid #000;
+        box-sizing: border-box;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-left-color: transparent;
+    }
+
+    /* 5.emoji_wow */
+    .emoji_wow:after{content: "Wow";}
+    .emoji_wow .emoji_face{
+        position: absolute;
+        width: 100%;height: inherit;
+        animation: wow-face 3s linear infinite;
+    }
+    @keyframes wow-face{
+        15%{transform: rotate(20deg) translateX(-25px);}
+        45%,65%{transform: rotate(-20deg) translateX(25px);}
+        75%,100%{transform: rotate(0deg) translateX(0);}
+    }
+
+    .emoji_wow .emoji_eyebrows{
+        position: absolute;
+        left: calc(50% - 3px);width: 6px;height: 6px;
+        border-radius: 50%;
+        box-shadow: -18px 0 0 0 #000,-33px 0 0 0 #000,
+                     18px 0 0 0 #000,33px 0 0 0 #000;
+        animation: wow-brow 3s linear 0s infinite;
+    }
+    @keyframes wow-brow{
+        15%,65%{top: 25px;}
+        75%,100%,0%{top: 15px;}
+    }
+
+    .emoji_wow .emoji_eyebrows::before,.emoji_wow .emoji_eyebrows:after{
+        content: "";
+        position: absolute;left: calc(50% - 12px);
+        top: -3px;width: 24px;height: 20px;
+        border-radius: 50%;border: 6px solid #000;
+        box-sizing: border-box;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    .emoji_wow .emoji_eyebrows:before{margin-left: -25px;}
+    .emoji_wow .emoji_eyebrows:after{margin-left: 25px;}
+
+    .emoji_wow .emoji_eyes{
+        position: absolute;
+        left: calc(50% - 8px);top: 35px;width: 16px;height: 24px;
+        border-radius: 50%;
+        box-shadow: 25px 0 0 0 #000,-25px 0 0 0 #000;
+    }
+
+    .emoji_wow .emoji_tongue{
+        position: absolute;
+        left: calc(50% - 15px);top: 50%;width: 30px;height: 45px;
+        border-radius: 50%;background: #000;
+        animation: wow-mouth 3s linear 0s infinite;
+    }
+    @keyframes wow-mouth{
+        10%,30%{width: 20px;height: 20px;left: calc(50% - 10px);}
+        50%,70%{width: 30px;height: 40px;left: calc(50% - 15px);}
+        75%,100%{height: 50px;}
+    }
+
+    /* 6.emoji_sad */
+    .emoji_sad:after{content: 'Sad';}
+    .emoji_sad .emoji_face{
+        position: absolute;
+        width: 100%;height: inherit;
+        animation: sad-face 2s ease-in infinite;
+    }
+    @keyframes sad-face{
+        25%,35%{top: -15px;}
+        55%,95%{top: 10px;}
+        100%, 0%{top: 0;}
+    }
+
+    .emoji_sad .emoji_eyebrows{
+        position: absolute;
+        left: calc(50% - 3px);top: 35px;width: 6px;height: 6px;
+        border-radius: 50%;
+        box-shadow: -40px 9px 0 0 #000,-25px 0 0 0 #000,
+                    25px 0 0 0 #000,40px 9px 0 0 #000;
+    }
+
+    .emoji_sad .emoji_eyebrows:before,.emoji_sad .emoji_eyebrows:after{
+        content: '';
+        position: absolute;
+        left: calc(50% - 15px);top: 2px;
+        border-radius: 50%;
+        width: 30px;height: 20px;border: 6px solid #000;
+        box-sizing: border-box;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+    }
+    .emoji_sad .emoji_eyebrows:before{margin-left: -30px;transform: rotate(-30deg);}
+    .emoji_sad .emoji_eyebrows:after{margin-left: 30px;transform: rotate(30deg);}
+
+    .emoji_sad .emoji_eyes{
+        position: absolute;
+        left: calc(50% - 7px);top: 50px;width: 14px;height: 16px;
+        border-radius: 50%;
+        box-shadow: 25px 0 0 0 #000,-25px 0 0 0 #000;
+    }
+
+    .emoji_sad .emoji_eyes:after{
+        content: '';position: absolute;
+        width: 12px;height: 12px;margin-left: 1px;background: #548dff;
+        border-radius: 0 100% 40% 50% / 0 50% 40% 100%;
+        animation: tear-drop 2s ease-in infinite;
+    }
+
+    @keyframes tear-drop{
+        0%,100%{display: block;left: 35px;top: 15px;
+                transform: rotate(45deg) scale(0);}
+        25%{display: block;left: 35px;
+                transform: rotate(45deg) scale(2);}
+        49.9%{display: block;left: 35px;top: 65px;
+                transform: rotate(45deg) scale(0);}
+
+        50%{display: block;left: -35px;top: 15px;
+                transform: rotate(45deg) scale(0);}
+        75%{display: block;left: -35px;top: 15px;
+                transform: rotate(45deg) scale(2);}
+        99.9%{display: block;left: -35px;top: 65px;
+                transform: rotate(45deg) scale(0);}
+    }
+
+    .emoji_sad .emoji_mouth{
+        position: absolute;
+        left: calc(50% - 3px);top: 90px;width: 6px;height: 6px;
+        border-radius: 50%;
+        box-shadow: -18px 0 0 0 #000,18px 0 0 0 #000;
+    }
+    .emoji_sad .emoji_mouth:after{
+        content: '';position: absolute;
+        left: calc(50% - 30px);top: -10px;width: 60px;height: 80px;
+        box-sizing: border-box;border: 6px solid #000;
+        border-radius: 50%;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+
+    /* 7.emoji_angry */
+    .emoji_angry:after{content: 'angry';}
+    .emoji_angry{
+        background: linear-gradient(to bottom,#d5234c -10%,#ffda6a 100%);
+        background-size: 100%;
+    }
+    .emoji_angry .emoji_face{
+        position: absolute;
+        width: 100%;height: inherit;
+        animation: angry_face 2s ease-in 0s infinite;
+    }
+    @keyframes angry_face{
+        35%,60%{transform: translateX(0) translateY(10px) scale(0.9);}
+
+        40%{transform: translateX(-5px) translateY(10px) scale(0.9);}
+        45%{transform: translateX(5px) translateY(10px) scale(0.9);}
+
+        50%{transform: translateX(-5px) translateY(10px) scale(0.9);}
+        55%{transform: translateX(5px) translateY(10px) scale(0.9);}
+    }
+
+    .emoji_angry .emoji_eyebrows{
+        position: absolute;left: calc(50% - 3px);top: 55px;
+        width: 6px;height: 6px;border-radius: 50%;
+        box-shadow: -44px 5px 0 0 #000,-7px 16px 0 0 #000,
+                    7px 16px 0 0 #000,44px 5px 0 0 #000;
+    }
+    .emoji_angry .emoji_eyebrows:before,.emoji_angry .emoji_eyebrows:after{
+        content: '';position: absolute;
+        left: calc(50% - 25px);top: 0;width: 50px;height: 20px;
+        border: 6px solid #000;border-radius: 50%;
+        box-sizing: border-box;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-left-color: transparent;
+    }
+    .emoji_angry .emoji_eyebrows:before{margin-left: -25px;transform: rotate(15deg);}
+    .emoji_angry .emoji_eyebrows:after{margin-left: 25px;transform: rotate(-15deg);}
+    .emoji_angry .emoji_eyes{
+        position: absolute;
+        left: calc(50% - 6px);top: 70px;width: 12px;height: 12px;
+        border-radius: 50%;
+        box-shadow: 25px 0 0 0 #000,-25px 0 0 0 #000;
+    }
+    .emoji_angry .emoji_mouth{
+        position: absolute;
+        left: calc(50% - 18px);bottom: 15px;width: 36px;height: 18px;
+        background: #000;border-radius: 50%;
+        animation: angry-mouth 2s ease-in 0s infinite;
+    }
+    @keyframes angry-mouth{
+        25%,50%{height: 6px;bottom: 25px;}
+    }
+    </style>
 </head>
 <body>
 <div id="wrap">
@@ -292,7 +690,7 @@
                                 <dd>
                                     <ul>
                                         <li><a href="https://github.com/hhyeonn/firebase_kakao_app" target="_blank" title="새창으로 열기">Github</a></li>
-                                        <li><a href="https://hhyeonn.github.io/firebase_kakao_app/" target="_blank" title="새창으로 열기" onClick="window.open(this.href,'','left=700, top=50, width=375, height=811'); return false;">React Web</a></li>
+                                        <li><a href="https://hhyeonn.github.io/firebase_kakao_app/" target="_blank" title="새창으로 열기" onClick="window.open(this.href,'','left=700, top=50, width=375, height=701'); return false;">React Web</a></li>
                                     </ul>
                                 </dd>
                             </dl>
@@ -335,29 +733,64 @@
                     <div class="project-5">
                         <div class="num">Project 6</div>
                         <div class="project-img">
-                            <figure>
-                                <img class="device" src="images/ipad png_90.png" alt="테블릿 목업" style="width: 580px;">
-                                <img class="product" src="images/main.png" alt="UI/UX디자인">
-                            </figure>
+                            <div class="emoji emoji_like">
+                                <div class="emoji_hand">
+                                    <div class="emoji_thumb"></div>
+                                </div>
+                            </div>
+                        
+                            <div class="emoji emoji_love">
+                                <div class="emoji_heart"></div>
+                            </div>
+                        
+                            <div class="emoji emoji_haha">
+                                <div class="emoji_face">
+                                    <div class="emoji_eyes"></div>
+                                    <div class="emoji_mouth">
+                                        <div class="emoji_tongue"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="emoji emoji_yay">
+                                <div class="emoji_face">
+                                    <div class="emoji_eyebrows"></div>
+                                    <div class="emoji_mouth"></div>
+                                </div>
+                            </div><br>
+                        
+                            <div class="emoji emoji_wow">
+                                <div class="emoji_face">
+                                    <div class="emoji_eyebrows"></div>
+                                    <div class="emoji_eyes"></div>
+                                    <div class="emoji_tongue"></div>
+                                </div>
+                            </div>
+                        
+                            <div class="emoji emoji_sad">
+                                <div class="emoji_face">
+                                    <div class="emoji_eyebrows"></div>
+                                    <div class="emoji_eyes"></div>
+                                    <div class="emoji_mouth"></div>
+                                </div>
+                            </div>
+                        
+                            <div class="emoji emoji_angry">
+                                <div class="emoji_face">
+                                    <div class="emoji_eyebrows"></div>
+                                    <div class="emoji_eyes"></div>
+                                    <div class="emoji_mouth"></div>
+                                </div>
+                            </div>
                         </div>
                         <div class="description">
                             <h3>
-                                <span class="sub_title">모바일 웹 기획&UIUX Design</span><br>
-                                <span class="main_title">Closet</span>
+                                <span class="sub_title">PURE CSS</span><br>
+                                <span class="main_title">Facebook_Emoji</span>
                             </h3>
                             <dl>
                                 <dt class="blind">프로젝트 개요</dt>
-                                <dd>패션,라이프 쇼핑 모바일 웹 UIUX Design을 기획했습니다.<br>모바일 웹 제작의 전반적인 업무를 경험하기 위한 프로젝트 입니다.<br>
-                                    Figma를 이용해 앱 전체적인 디자인을 했습니다. 경쟁사 분석과 정보구조 설계, swot 분석, Business Model Canvas, 사용자 조사, 프로토타입 설계를 기획 했습니다.
-                                </dd>
-                            </dl>
-                            <dl class="site">
-                                <dt class="blind">참고 자료</dt>
-                                <dd>
-                                    <ul>
-                                        <li ><a href="#" target="_blank" title="새창으로 열기">기획서</a></li>
-                                        <li ><a href="#" target="_blank" title="새창으로 열기">Design</a></li>
-                                    </ul>
+                                <dd>keyframes와 animation을 활용하여 이모지를 구현하였습니다.
                                 </dd>
                             </dl>
                         </div>
