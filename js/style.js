@@ -86,26 +86,42 @@ window.onload = () => {
 /* ------------------------------------------------------------------*/
 // projects
 
-// 웹표준/접근성 팝업창
+// 웹표준/접근성 팝업창 modal
   const btnModal = document.getElementById("btnmodal")
   const modal = document.getElementById("modal")
+  const closeBtn = modal.querySelector(".close-area")
   
   btnModal.addEventListener("click", e => {
-      modal.style.display = "flex"
+    e.preventDefault();
+      modal.style.display = "flex";
   });
   
-  const closeBtn = modal.querySelector(".close-area")
   closeBtn.addEventListener("click", e => {
-      modal.style.display = "none"
-  });
-  
-  modal.addEventListener("click", e => {
-    const evTarget = e.target
-    if(evTarget.classList.contains("modal-overlay")) {
-        modal.style.display = "none"
-    }
+    e.preventDefault();
+      modal.style.opacity = "0";
   });
 
+  modal.addEventListener("click", e => {
+      modal.style.display = "none";
+  });
+
+  modal.addEventListener("click", e => {
+      const evTarget = e.target
+      e.preventDefault();
+      if(evTarget.classList.contains("modal")) {
+          modal.style.display = "none"
+      }
+  });
+
+   //When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+    }
+
+
+/* ----------------------------------------------------------------- */
 
   const productImg = document.querySelectorAll('.project-img');
 
